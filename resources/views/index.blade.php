@@ -1,3 +1,6 @@
+    @extends ('layouts.default')
+
+    @section('content')
     <main>
         <div class="slider">
             <input type="radio" id="control1" name="controls" checked="checked" />
@@ -8,6 +11,7 @@
             <label for="control3"></label>
             <input type="radio" id="control4" name="controls" />
             <label for="control4"></label>
+
 
             <div class="sliderinner">
                 <ul>
@@ -23,7 +27,7 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi impedit saepe nihil ea, eligendi exercitationem
                     ipsum quia, quibusdam et porro distinctio enim vero consectetur incidunt vel aliquam autem, nam sapiente.
                 </p>
-                <a class="boton-tr" href="registro.php">Registrarse</a>
+                <a class="boton-tr" href="registro">Registrarse</a>
         </div>
         <section>
             <div class="second-sponsor">
@@ -84,3 +88,4 @@
             </div>
         </div>
     </main>
+    @endsection

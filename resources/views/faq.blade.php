@@ -2,89 +2,41 @@
 
     @section('content')
     <main>
-        <div class="slider">
-            <input type="radio" id="control1" name="controls" checked="checked" />
-            <label for="control1"></label>
-            <input type="radio" id="control2" name="controls" />
-            <label for="control2"></label>
-            <input type="radio" id="control3" name="controls" />
-            <label for="control3"></label>
-            <input type="radio" id="control4" name="controls" />
-            <label for="control4"></label>
-
-
-            <div class="sliderinner">
-                <ul>
-                    <li><img src="img/Showcase/rolex-hero-april-desktop.jpg" /></li>
-                    <li><img src="img/Showcase/hublot-world-cup-desktop.jpg" /></li>
-                    <li><img src="img/Showcase/cartiersantos-desktop.jpg " /></li>
-                    <li><img src="img/Showcase/tag-comp-hp-hero.jpg" /></li>
-                </ul>
-            </div>
+        <div class="faq-msg">
+            <h3>A continuación, encontrará algunas preguntas frecuentes y sus respuestas correspondientes.<br>Si no encuentras respuesta a lo que buscas puedes llamarnos al <span style="white-space: nowrap"><strong>0800-2525-2567</strong></span></h3>
         </div>
-        <div class="about">
-                <h3>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi impedit saepe nihil ea, eligendi exercitationem
-                    ipsum quia, quibusdam et porro distinctio enim vero consectetur incidunt vel aliquam autem, nam sapiente.
-                </p>
-                <a class="boton-tr" href="registro.blade.php">Registrarse</a>
-        </div>
-        <section>
-            <div class="second-sponsor">
-                <div class="sp-description">
-                    <div class="sp-text">
-                        <a href="#">Profesional</a>
-                        <p> Uno de los lemas más antiguos de Breitling es "Instrumentos para profesionales". Esas palabras están vigentes hoy más que nunca.
-                            Los relojes de la "Colección Profesional" están equipados con las características necesarias para ser los socios perfectos
-                            de los aventurero.
-                            </p>
-                        <a class="sp-button" href="#" class="button outline">Descubre la colección</a>
-                    </div>
-                    <div class="sp-img">
-                        <a href="#" title="Breitling-clock">
-                            <img src="img/breitling-home.png" alt="Professional">
-                            </a>
-                    </div>
-                </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <p class="question">Mi pedido aún no ha llegado.</p>
+                <p class="answer">La mayor parte de los pedidos llegan a tiempo, pero pueden producirse retrasos ocacionales en los envíos por correo. Habitualmente, los enviós nacionales aparecen en pocos días. En vaso de que su envío no llegue en un plazo de 10 días laborables, póngase en contanto con help@marca.com. Nos encargaremos de rastrear el envío y recibirá un producto de reemplazo o un reembolso.</p>
             </div>
-        </section>
-        <div class="brands">
-            <ul>
-                <li><a href="#"><img src="img/logos/breguet.png" alt=""></a></li>
-                <li><a href="#"><img src="img//logos/breitling-logo-update-1.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/cartier.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/longines.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/montblanc.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/omega.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/piaget.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/rolex.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/tag-heuer.png" alt=""></a></li>
-                <li><a href="#"><img src="img/logos/zenith.jpg" alt=""></a></li>
-            </ul>
-            <a class="boton-tr" href="#">todas las marcas</a>
-        </div>
-        <hr style="border:0.2px solid #ccc; width: 80%; margin: 0 auto;">
-        <div class="destacados">
-            <h3>Colección 2018</h3>
-            <div class="collections">
-                <img class="foto" src="img/collections/cartier-brand.jpg">
-                    <img class="logo" src="img/collections/cartier.png">
-                    <a class="boton-tr" href="#">Ver colección</a>
+            <div class="faq-item">
+                <p class="question">¿Qué puedo hacer si mi reloj se detiene?</p>
+                <p class="answer">Si el articulo está dañado, devuélvanoslo lo antes posible. La dirección es la siguiente:<br>Lima 1111<br>CP 1043<br>Ciudad Autónoma de Buenos Aires<br>Argentina<br>Le recomendamos que utilice una opción de envío con la cual el envío esté asegurado y se pueda rastrear. Háganos llegar el recibo de los costos de envío. Si el articulo está defectuoso, recibirá un reembolso.<br>Nuestro departamento de devoluciones es eficiente e intenta solucionar todos los problemas lo más rápidamente posible.</p>
             </div>
-            <div class="collections">
-                <img class="foto" src="img/collections/brand-hublot.jpg">
-                <img class="logo" src="img/collections/hublot.png">
-                <a class="boton-tr" href="#">Ver colección</a>
+            <div class="faq-item">
+                <p class="question">¿Cuándo recibiré mi reembolso?</p>
+                <p class="answer">Un 99% de los reembolsos se procesan el mismo día de la recepción. El departamento de reembolsos procesará todos los reembolsos lo antes posible. Si no recibe su reembolso después de 7 días, pónganse en contacto con nosotros a través de help@marca.com</p>
             </div>
-            <div class="collections">
-                <img class="foto" src="img/collections/iwc-image.jpg">
-                <img class="logo" src="img/collections/iwc.png">
-                <a class="boton-tr" href="#">Ver colección</a>
+            <div class="faq-item">
+                <p class="question">¿Las pilas están incluidas?</p>
+                <p class="answer">Sí, todos los relojes incorporan pilas nuevas.</p>
             </div>
-            <div class="collections">
-                <img class="foto" src="img/collections/omega-brand.jpg">
-                <img class="logo" src="img/collections/omega.png">
-                <a class="boton-tr" href="#">Ver colección</a>
+            <div class="faq-item">
+                <p class="question">¿Los relojes tienen garantía?</p>
+                <p class="answer">Sí, todos nuestros relojes incluyen la garantía de fabricación internacional, que incorpora nuestro sello oficial.</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">¿Pueden realizar entregas fuera de Buenos Aires?</p>
+                <p class="answer">Sí. Para ello, deberá completar el proceso normal de pago y seleccionar la provincia deseada.</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">Pueden realizar entregas internacionales?</p>
+                <p class="answer">Sí. Para ello, deberá completar el proceso normal de pago y seleccionar el país deseado.</p>
+            </div>
+            <div class="faq-item">
+                <p class="question">¿Cuál es el coste del envío?</p>
+                <p class="answer">La entrega es gratuita para todos los pedidos.</p>
             </div>
         </div>
     </main>

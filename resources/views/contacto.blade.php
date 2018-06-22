@@ -2,42 +2,42 @@
 
     @section('content')
     <main>
-        <div class="faq-msg">
-            <h3>A continuación, encontrará algunas preguntas frecuentes y sus respuestas correspondientes.<br>Si no encuentras respuesta a lo que buscas puedes llamarnos al <span style="white-space: nowrap"><strong>0800-2525-2567</strong></span></h3>
+        <img class="map" src="img/map.PNG" alt="mapa con direccion">
+        <div class="google-map">
+            <a href="https://www.google.com.ar/maps/place/Lima+1111,+C1073AAW+CABA/@-34.6211613,-58.3887272,15.25z/data=!4m5!3m4!1s0x95bccb28ea8781cb:0x950feb519009506e!8m2!3d-34.6210713!4d-58.3816733"
+               class="boton-tr boton-mapa" target="_blank">Ver mapa</a>
         </div>
-        <div class="faq-container">
-            <div class="faq-item">
-                <p class="question">Mi pedido aún no ha llegado.</p>
-                <p class="answer">La mayor parte de los pedidos llegan a tiempo, pero pueden producirse retrasos ocacionales en los envíos por correo. Habitualmente, los enviós nacionales aparecen en pocos días. En vaso de que su envío no llegue en un plazo de 10 días laborables, póngase en contanto con help@marca.com. Nos encargaremos de rastrear el envío y recibirá un producto de reemplazo o un reembolso.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">¿Qué puedo hacer si mi reloj se detiene?</p>
-                <p class="answer">Si el articulo está dañado, devuélvanoslo lo antes posible. La dirección es la siguiente:<br>Lima 1111<br>CP 1043<br>Ciudad Autónoma de Buenos Aires<br>Argentina<br>Le recomendamos que utilice una opción de envío con la cual el envío esté asegurado y se pueda rastrear. Háganos llegar el recibo de los costos de envío. Si el articulo está defectuoso, recibirá un reembolso.<br>Nuestro departamento de devoluciones es eficiente e intenta solucionar todos los problemas lo más rápidamente posible.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">¿Cuándo recibiré mi reembolso?</p>
-                <p class="answer">Un 99% de los reembolsos se procesan el mismo día de la recepción. El departamento de reembolsos procesará todos los reembolsos lo antes posible. Si no recibe su reembolso después de 7 días, pónganse en contacto con nosotros a través de help@marca.com</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">¿Las pilas están incluidas?</p>
-                <p class="answer">Sí, todos los relojes incorporan pilas nuevas.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">¿Los relojes tienen garantía?</p>
-                <p class="answer">Sí, todos nuestros relojes incluyen la garantía de fabricación internacional, que incorpora nuestro sello oficial.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">¿Pueden realizar entregas fuera de Buenos Aires?</p>
-                <p class="answer">Sí. Para ello, deberá completar el proceso normal de pago y seleccionar la provincia deseada.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">Pueden realizar entregas internacionales?</p>
-                <p class="answer">Sí. Para ello, deberá completar el proceso normal de pago y seleccionar el país deseado.</p>
-            </div>
-            <div class="faq-item">
-                <p class="question">¿Cuál es el coste del envío?</p>
-                <p class="answer">La entrega es gratuita para todos los pedidos.</p>
-            </div>
+        <div class="contact">
+            <form>
+                <div class="input-group input-group-icon">
+                    <input type="text" placeholder="Nombre" />
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="input-group input-group-icon">
+                    <input type="email" placeholder="Correo electrónico" />
+                    <div class="input-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="radio" name="gender" value="hombre" id="gender-male" />
+                    <label for="gender-male">Hombre</label>
+                    <input type="radio" name="gender" value="mujer" id="gender-female" />
+                    <label for="gender-female">Mujer</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Asunto" />
+                </div>
+                <div class="input-group">
+                    <textarea name="msg" rows="10" placeholder="Escribe tu mensaje aquí"></textarea>
+                </div>
+                <div class="input-group send-reset">
+                    <input type="submit" value="Enviar" />
+                    <input type="reset" value="Limpiar campos" />
+                </div>
+            </form>
         </div>
     </main>
     @endsection
