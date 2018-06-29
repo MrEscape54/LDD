@@ -35,11 +35,11 @@ $checked = '';
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="password" name="password" placeholder="Contraseña"/>
+                    <input type="password" name="contraseña" placeholder="Contraseña"/>
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <span class="obligatorio" >@php echo $errors->first('password') @endphp</span>
+                    <span class="obligatorio" >@php echo $errors->first('contraseña') @endphp</span>
                 </div>
 
                 <div class="input-group">

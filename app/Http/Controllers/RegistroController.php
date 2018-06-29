@@ -14,8 +14,9 @@ class RegistroController extends Controller
         $this->validate($request, [
             'nombre' => 'required|min:3|max:20',
             'email' => 'required|email',
-            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
+            'contraseña' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/|confirmed',
             'avatar' => 'image'
         ]);
+        return redirect('/');
     }
 }

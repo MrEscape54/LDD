@@ -13,7 +13,8 @@ class LoginController extends Controller
     public function submit(Request $request) {
         $this->validate($request, [
             'email' => 'required|email',
-            'password' => 'required'
+            'contraseña' => 'required'
         ]);
+        return redirect('/');
     }
 }

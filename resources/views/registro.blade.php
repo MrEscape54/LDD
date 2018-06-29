@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="tel" name="phone" value="{{ old('phone') }}" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" 
+                    <input type="tel" name="teléfono" value="{{ old('phone') }}" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" 
                            placeholder="Teléfono (opcional) xxx-xxxx-xxxx" />
                     <div class="input-icon">
                         <i class="fas fa-phone"></i>
@@ -34,26 +34,26 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="password"  name="password" placeholder="Contraseña (mayúscula y número requerido)" />
+                    <input type="password"  name="contraseña" placeholder="Contraseña (mayúscula y número requerido)" />
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <span class="obligatorio" >@php echo $errors->first('password') @endphp</span>
+                    <span class="obligatorio" >@php echo $errors->first('contraseña') @endphp</span>
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="password"  name="password_confirmation" placeholder="Repite la contraseña" />
+                    <input type="password"  name="contraseña_confirmation" placeholder="Repite la contraseña" />
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="file"  name="avatar" />
+                    <input type="file"  name="avatar"/>
                     <div class="input-icon">
                     <i class="fas fa-file-image"></i>
                     </div>
-                    <span class="obligatorio" >@if(isset($errores['avatar'])) echo $errores['avatar']; @endif</span>
+                    <span class="obligatorio" >@php echo $errors->first('avatar') @endphp</span>
 
                 </div>
 
