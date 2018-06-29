@@ -1,23 +1,23 @@
 @extends ('layouts.default')
 
-<?php 
+@php
 
 $nombre = '';
 $email = '';
 $avatar = '';
 
-?>
+@endphp
 
 @section('content')
 
     <main class="profile">
         <div class="profile-pic">
-            <img src="<?php echo $avatar; ?>" alt="Profile Picture">
+            <img src="{{$avatar}}" alt="Profile Picture">
         </div>
 
     <div class="profile-data">
         <div class="input-group input-group-icon">
-            <p class="profile-name"><?php echo $nombre; ?></p>
+            <p class="profile-name">{{$nombre}}</p>
             <div class="input-icon">
                 <i class="fas fa-user"></i>
             </div>
@@ -26,7 +26,7 @@ $avatar = '';
 
     <div class="profile-data">
         <div class="input-group input-group-icon">
-            <p class="profile-email"><?php echo $email; ?></p>
+            <p class="profile-email">{{$email}}</p>
             <div class="input-icon">
                 <i class="fas fa-envelope"></i>
             </div>

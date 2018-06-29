@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <title>>DDL | Relojes de Lujo</title>
-   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/sanitize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="/css/sanitize.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/contact.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800|Open+Sans+Condensed:300" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <?php
+    @php
         $avatar = '';
         $displayAvatar = '';
         $displayIngreso = '';
-    ?>
+    @endphp
 
     <header>
         <div class="search-scart">
@@ -29,17 +28,17 @@
             </div>
             <div class="ingreso">
                 <ul>
-                    <li <?php echo $displayIngreso; ?> >
-                        <a href="login"><?php echo $avatar === '' ? 'Ingresar' :  ''; ?></a>
+                    <li {{$displayIngreso}}>
+                        <a href="login">@php echo $avatar === '' ? 'Ingresar' :  ''; @endphp</a>
                     </li>
-                    <li class="avatar-container"<?php echo $displayAvatar; ?>>
+                    <li class="avatar-container" {{$displayAvatar}}>
                         <?php echo $avatar !== '' ? '<img src="' . $avatar . '">
                             <span>
                                 <div class="submenu-container">
                                     <div class="submenu-items">
                                     <ul>
-                                        <li class="desplegable"><a href="logout.php">Salir</a></li>
-                                        <li class="desplegable"><a href="perfil.php">Perfil</a></li>
+                                        <li class="desplegable"><a href="logout">Salir</a></li>
+                                        <li class="desplegable"><a href="perfil">Perfil</a></li>
                                     </ul>
                                     </div>
                                 </div>
@@ -50,7 +49,7 @@
         </div>
         <hr style="border:0.2px solid #ccc; width: 80%;">
         <div class="logo-container">
-            <a href="/"><img src="img/logo.png" alt="logo"></a>
+            <a href="/"><img src="/img/logo.png" alt="logo"></a>
             <h4>RELOJES DE LUJO</h4>
         </div>
 
