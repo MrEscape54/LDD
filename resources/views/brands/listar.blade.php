@@ -5,7 +5,7 @@
 <ul>
    @foreach ($brands as $item)
        <li>
-          {{$item->brand_name}}
+          {{$item->nombre}}
        </li>
    @endforeach
 </ul>
