@@ -14,6 +14,9 @@ Route::post('/registro','RegistroController@submit');
 
 Route::get('/perfil','PerfilController@perfil');
 
+// Brands
 Route::get('/brands/listar','BrandController@listar');
 Route::get('/brands/agregar','BrandController@agregar');
 
+// Types
+Route::get('/brands/agregar', "TypeController@agregar");

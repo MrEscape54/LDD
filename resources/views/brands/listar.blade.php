@@ -3,9 +3,9 @@
 @section('content')
 
 <ul>
-   @foreach ($brands as $item)
+   @foreach ($brands as $brand)
        <li>
-          {{$item->nombre}}
+          {{$brand->name}}
        </li>
    @endforeach
 </ul>
