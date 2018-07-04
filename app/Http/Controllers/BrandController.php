@@ -8,10 +8,10 @@ class BrandController extends Controller
 {
     public function listar(Request $request) {
 
-        $brands = Brand::all();
+        $table = Brand::find(1);
 
         return view('brands.listar')
-            ->with('brands', $brands);
+            ->with('brands', $table);
     }
 
     public function agregar(Request $request) {

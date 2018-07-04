@@ -1,11 +1,15 @@
 <?php
 
+namespace App\Http\Controllers\Auth;
 namespace App\Http\Controllers;
-use Validator;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+    protected $redirectTo = '/';
+
     public function login(Request $request) {
         return view('/login');
     }
@@ -16,5 +20,20 @@ class LoginController extends Controller
             'contraseña' => 'required'
         ]);
         return redirect('/');
+    }
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+    public function authenticate(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Authentication passed...
+            return redirect()->intended('perfil');
+        }
     }
 }

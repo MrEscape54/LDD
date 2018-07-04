@@ -1,11 +1,5 @@
 @extends ('layouts.default')
 
-@php
-
-$checked = '';
-
-@endphp
-
 @section('content')
 
  @if ($errors->any()) {{-- se tiene que mostrar solo cuando valide las credenciales --}}
@@ -48,7 +42,7 @@ $checked = '';
                 </div>
                 <div>
                 <label>
-                    <input type="checkbox" name="recordar" id="cbox1" value="recordar" {{{ $checked }}}>
+                    <input type="checkbox" name="recordar" id="cbox1" value="recordar" {{ old('recordar') ? 'checked' : '' }}>
                     <span>Recordar mi usuario</span>
                 </label>
                 </div>
