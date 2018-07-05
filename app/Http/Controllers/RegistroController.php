@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+/* use App\User; */
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
+/* use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Auth\RegistersUsers; */
 use Illuminate\Http\Request;
 
 class RegistroController extends Controller
 {
 
-    use RegistersUsers;
+/*     use RegistersUsers;
 
     protected $redirectTo = '/';
 
@@ -41,13 +41,13 @@ class RegistroController extends Controller
             'password' => Hash::make($data['contraseña']),
             'avatar' => $data['avatar']
         ]);
-    }
+    } */
 
     public function registro(Request $request) {
         return view('/registro');
     }
 
-   /*  public function submit(Request $request) {
+    public function submit(Request $request) {
         $this->validate($request, [
             'nombre' => 'required|min:3|max:20',
             'email' => 'required|email',
@@ -56,5 +56,5 @@ class RegistroController extends Controller
             'avatar' => 'image'
         ]);
         return redirect('/');
-    }  */
+    } 
 }

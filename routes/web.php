@@ -10,7 +10,7 @@ Route::get('/faq', 'FaqController@faq');
 Route::get('/contacto', 'ContactoController@contacto');
 
 Route::get('/registro','RegistroController@registro');
-Route::post('/registro','RegistroController@validator');
+Route::post('/registro','RegistroController@submit');
 
 Route::get('/perfil','PerfilController@perfil');
 
