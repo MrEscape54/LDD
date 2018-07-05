@@ -19,7 +19,7 @@
             </div>
 
             <form method="post">
-                    {{ csrf_field() }}
+                @csrf
                 <div class="input-group input-group-icon">
                     <input type="email" name="email" placeholder="Correo electrónico" value="{{ old('email') }}"/>
                     <div class="input-icon">
@@ -38,7 +38,7 @@
 
                 <div class="input-group">
                     <input type="submit" value="Ingresar" />
-                    <a href="#">Olvidé mi contraseña</a>
+                    <a href="{{ route('password.request') }}">Olvidé mi contraseña</a>
                 </div>
                 <div>
                 <label>
