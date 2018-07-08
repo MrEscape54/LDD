@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateTableGenres extends Migration
 {
@@ -17,6 +18,18 @@ class CreateTableGenres extends Migration
            $table->increments('id');
            $table->string('genre_name')->length(1);
         });
+
+        $genres = [
+            'm',
+            'f',
+            'u'
+        ];
+
+        foreach ($genres as $value) {
+            DB::table('genres')->insert([
+                'genre_name' => $value
+            ]);
+        }
     }
 
     /**

@@ -31,9 +31,9 @@ class CreateTableBrands extends Migration
             'zenith'
             ];
 
-        foreach($brands as $value) {
+        foreach($brands as $brand) {
             DB::table('brands')->insert([
-                'brand_name' => $value
+                'brand_name' => $brand
             ]);
         }
 

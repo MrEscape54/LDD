@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\DB;
 
 class CreateTableTypes extends Migration
 {
@@ -17,6 +18,22 @@ class CreateTableTypes extends Migration
            $table->increments('id');
            $table->string('type_name')->length(45);
         });
+
+        $types = [
+            'deportivo',
+            'automatico',
+            'cronografo',
+            'buceo',
+            'smart',
+            'vintage'
+        ];
+
+        foreach ($types as $type) {
+            DB::table('types')->insert([
+               'type_name' => $type
+            ]);
+        }
+
     }
 
     /**
