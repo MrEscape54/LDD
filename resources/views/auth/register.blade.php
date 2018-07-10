@@ -1,13 +1,14 @@
 @extends ('layouts.default')
 
 @section('content')
-<main class="login-page">
+    <main class="login-page">
         <div class="contact signin">
-        <div class="titulos">
+            <div class="titulos">
                 <p>Registrarse</p>
                 <p><a href="login">Ya tengo cuenta</a></p>
             </div>
-            <form method="post" enctype="multipart/form-data">
+            <?php var_dump($errors) ; ?>
+            <form method="post" action="/register" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="input-group input-group-icon">
                     <input type="text" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre de usuario" />
@@ -26,7 +27,7 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="tel" name="teléfono" value="{{ old('phone') }}" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" 
+                    <input type="tel" name="telefono" value="{{ old('phone') }}" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
                            placeholder="Teléfono (opcional) xxx-xxxx-xxxx" />
                     <div class="input-icon">
                         <i class="fas fa-phone"></i>
@@ -34,15 +35,15 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="password"  name="contraseña" placeholder="Contraseña (mayúscula y número requerido)" />
+                    <input type="password"  name="password" placeholder="Contraseña (mayúscula y número requerido)" />
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
-                    <span class="obligatorio" >@php echo $errors->first('contraseña') @endphp</span>
+                    <span class="obligatorio" >@php echo $errors->first('password') @endphp</span>
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="password"  name="contraseña_confirmation" placeholder="Repite la contraseña" />
+                    <input type="password"  name="password_confirmation" placeholder="Repite la contraseña" />
                     <div class="input-icon">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -51,7 +52,7 @@
                 <div class="input-group input-group-icon">
                     <input type="file"  name="avatar"/>
                     <div class="input-icon">
-                    <i class="fas fa-file-image"></i>
+                        <i class="fas fa-file-image"></i>
                     </div>
                     <span class="obligatorio" >@php echo $errors->first('avatar') @endphp</span>
 

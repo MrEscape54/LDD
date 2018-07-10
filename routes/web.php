@@ -9,14 +9,15 @@ Route::get('/faq', 'FaqController@faq');
 
 Route::get('/contacto', 'ContactoController@contacto');
 
-Route::get('/registro','RegistroController@registro');
-Route::post('/registro','RegistroController@submit');
+Route::get('/register','RegisterController@register');
+Route::post('/register','RegisterController@submit');
 
 Route::get('/perfil','PerfilController@perfil');
 
-// Brands
 Route::get('/brands/listar','BrandController@listar');
+
 Route::get('/brands/agregar','BrandController@agregar');
 
-// Types
-Route::get('/brands/agregar', "TypeController@agregar");
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

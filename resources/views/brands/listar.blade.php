@@ -2,12 +2,13 @@
 
 @section('content')
 
-<ul>
-   @foreach ($brands as $brand)
+{{ $brands->brand_name}}
+{{-- <ul>
+   @foreach ($brands as $item)
        <li>
-          {{$brand->name}}
+          {{$item->brand_name}}
        </li>
    @endforeach
-</ul>
+</ul> --}}
 
 @endsection
