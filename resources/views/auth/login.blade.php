@@ -2,10 +2,7 @@
 
 @section('content')
 
-{{-- para editar los campos y mensajes de las validaciones hay que modificar
-    la función validateLogin del trait AuthenticatesUsers en Illuminate/Fundation/Auth --}}
-
- @if ($errors->any()) {{-- se tiene que mostrar solo cuando valide las credenciales --}}
+ @if ($errors->any()) {{-- I want the credential error here, but only for credential error is triggered --}}
     <div class="warning">
         <div class="input-icon">
         <i style="font-size:1.5em; color:Tomato; margin-right:5px;" class="fas fa-exclamation-triangle"></i>
@@ -14,11 +11,12 @@
     </div>
 @endif
 
+
 <main class="login-page">
     <div class="contact login">
         <div class="titulos">
             <p>Ingresar</p>
-            <p><a href="registro">Soy nuevo</a></p>
+            <p><a href="register">Soy nuevo</a></p>
         </div>
 
         <form method="post">
@@ -32,11 +30,11 @@
             </div>
 
             <div class="input-group input-group-icon">
-                <input type="password" name="contraseña" placeholder="Contraseña"/>
+                <input type="password" name="password" placeholder="Contraseña"/>
                 <div class="input-icon">
                     <i class="fas fa-lock"></i>
                 </div>
-                <span class="obligatorio" >{{ $errors->first('contraseña') }}</span>
+                <span class="obligatorio" >{{ $errors->first('password') }}</span>
             </div>
 
             <div class="input-group">

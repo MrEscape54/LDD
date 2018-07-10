@@ -20,4 +20,3 @@ Route::get('/brands/agregar','BrandController@agregar');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
