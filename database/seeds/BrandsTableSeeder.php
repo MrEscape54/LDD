@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Carbon\Carbon as BaseCarbon;
-use Illuminate\Support\Traits\Macroable;
-
+use Carbon\Carbon;
 
 class BrandsTableSeeder extends Seeder
 {
@@ -14,15 +12,25 @@ class BrandsTableSeeder extends Seeder
      */
     public function run()
     {
-    
-        $brands = ['Breget', 'Breitling', 'Cartier', 'Longines', 'MontBlanc', 'Omega', 'Piaget', 'Rolex', 'Tag Heuer', 'Zenith'];
+        $brands = [
+            'Breget', 
+            'Breitling', 
+            'Cartier', 
+            'Longines', 
+            'MontBlanc', 
+            'Omega', 
+            'Piaget', 
+            'Rolex', 
+            'Tag Heuer', 
+            'Zenith'
+        ];
 
         foreach ($brands as $brand) {
-            
+
             DB::table('brands')->insert([
                 'brand_name' => $brand,
-                'created_at' => BaseCarbon::now(),
-                'updated_at' => BaseCarbon::now(),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ]);
         }
     }
