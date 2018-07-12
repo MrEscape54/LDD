@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BrandsTableSeeder::class,
             GenresTableSeeder::class,
-            CollectionsTableSeeder::class,
+            CategoriesTableSeeder::class,
         ]);
     }
 }

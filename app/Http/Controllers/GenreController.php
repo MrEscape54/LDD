@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Brand;
+use App\Models\Genre;
 use Illuminate\Http\Request;
 
-class BrandController extends Controller
+class GenreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        $table = Brand::all();
-
-        return view('brands.index')
-            ->with('brands', $table);
+        //
     }
 
     /**
