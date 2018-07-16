@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'IndexController@index');
 Route::get('/faq', 'FaqController@faq');
 Route::get('/contacto', 'ContactoController@contacto');
-Route::get('/perfil', 'PerfilController@perfil');
+Route::get('/perfil', 'PerfilController@perfil')->middleware('auth');
 
 Route::resources([
     'brands' => 'BrandController',
@@ -14,4 +14,3 @@ Route::resources([
 ]);
 
 Auth::routes();
-

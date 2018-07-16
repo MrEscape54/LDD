@@ -6,5 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order_Detail extends Model
 {
-    //
+    public function order()
+    {
+        return $this->belongsTo('App\Models\Order');
+    }
+
+    public function product()
+    {
+        return $this->belongsTo('App\Models\Product');
+    }
 }
