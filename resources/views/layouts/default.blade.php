@@ -4,7 +4,15 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <title>>DDL | Relojes de Lujo</title>
+
+   <!-- CSRF Token -->
+   <meta name="csrf-token" content="{{ csrf_token() }}">
+
+   <title>{{ config('app.name', 'LDD') }}</title>
+
+   <!-- Scripts -->
+   <script src="{{ asset('js/app.js') }}" defer></script>
+
     <link rel="stylesheet" href="/css/sanitize.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/contact.css">
@@ -12,12 +20,6 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 </head>
 <body>
-
-    @php
-        $avatar = '';
-        $displayAvatar = '';
-        $displayIngreso = '';
-    @endphp
 
     <header>
         <div class="search-scart">
@@ -28,22 +30,33 @@
             </div>
             <div class="ingreso">
                 <ul>
-                    <li {{$displayIngreso}}>
-                        <a href="login">@php echo $avatar === '' ? 'Ingresar' :  ''; @endphp</a>
-                    </li>
-                    <li class="avatar-container" {{$displayAvatar}}>
-                        <?php echo $avatar !== '' ? '<img src="' . $avatar . '">
-                            <span>
-                                <div class="submenu-container">
-                                    <div class="submenu-items">
-                                    <ul>
-                                        <li class="desplegable"><a href="logout">Salir</a></li>
-                                        <li class="desplegable"><a href="perfil">Perfil</a></li>
-                                    </ul>
+                    @guest
+                        <li>
+                            <a href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+                        </li>
+                    @else
+                        <li class="avatar-container">
+                            <a><img src="{{ Auth::user()->avatar }}"></a>
+                                <span>
+                                    <div class="submenu-container">
+                                        <div class="submenu-items">
+                                        <ul>
+                                            <li class="desplegable"><a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                              document.getElementById('logout-form').submit();">
+                                                 {{ __('Salir') }}
+                                             </a></li>
+                                            <li class="desplegable"><a href="perfil">Perfil</a></li>
+
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                 @csrf
+                                            </form>
+                                        </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </span>' : ''; ?>
-                    </li>
+                                </span>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </div>
