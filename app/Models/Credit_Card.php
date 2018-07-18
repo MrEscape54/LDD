@@ -6,8 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Credit_Card extends Model
 {
-   public function user()
-   {
-       return $this->belongsTo('App\User');
-   }
+    protected $guard = [];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

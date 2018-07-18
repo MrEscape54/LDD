@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $guard = [];
+    
     public function order_details()
     {
         return $this->hasMany('App\Models\Order_Detail');

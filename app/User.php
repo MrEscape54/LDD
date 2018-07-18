@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function address()
     {
-        return $this->hasOne('App\Models\Address');
+        return $this->hasMany('App\Models\Address');
     }
 
     public function credit_cards()

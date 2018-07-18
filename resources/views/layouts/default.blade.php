@@ -37,24 +37,24 @@
                     @else
                         <li class="avatar-container">
                             <a><img src="{{ Auth::user()->avatar }}"></a>
-                                <span>
-                                    <div class="submenu-container">
-                                        <div class="submenu-items">
-                                        <ul>
-                                            <li class="desplegable"><a href="{{ route('logout') }}"
-                                                onclick="event.preventDefault();
-                                                              document.getElementById('logout-form').submit();">
-                                                 {{ __('Salir') }}
-                                             </a></li>
-                                            <li class="desplegable"><a href="perfil">Perfil</a></li>
+                            <span>
+                                <div class="submenu-container">
+                                    <div class="submenu-items">
+                                    <ul>
+                                        <li class="desplegable"><a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Salir') }}
+                                            </a></li>
+                                        <li class="desplegable"><a href="perfil">Perfil</a></li>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                 @csrf
-                                            </form>
-                                        </ul>
-                                        </div>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                        </form>
+                                    </ul>
                                     </div>
-                                </span>
+                                </div>
+                            </span>
                         </li>
                     @endguest
                 </ul>

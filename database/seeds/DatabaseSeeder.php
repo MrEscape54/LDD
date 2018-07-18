@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class,
             ProductsTableSeeder::class,
             UsersTableSeeder::class,
+            CreditCardsSeeder::class,
+            AddressesSeeder::class,
         ]);
     }
 }
