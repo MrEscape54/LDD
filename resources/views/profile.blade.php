@@ -1,23 +1,15 @@
 @extends ('layouts.default')
 
-@php
-
-$nombre = '';
-$email = '';
-$avatar = '';
-
-@endphp
-
 @section('content')
 
     <main class="profile">
         <div class="profile-pic">
-            <img src="{{$avatar}}" alt="Profile Picture">
+            <img src="{{'storage/' . $user->avatar}}" alt="Profile Picture">
         </div>
 
     <div class="profile-data">
         <div class="input-group input-group-icon">
-            <p class="profile-name">{{$nombre}}</p>
+            <p class="profile-name">{{$user->name}}</p>
             <div class="input-icon">
                 <i class="fas fa-user"></i>
             </div>
@@ -26,7 +18,7 @@ $avatar = '';
 
     <div class="profile-data">
         <div class="input-group input-group-icon">
-            <p class="profile-email">{{$email}}</p>
+            <p class="profile-email">{{$user->email}}</p>
             <div class="input-icon">
                 <i class="fas fa-envelope"></i>
             </div>
@@ -59,9 +51,5 @@ $avatar = '';
         <td>$12.250</td>
     </tr>
     </table>
-
-    <div class="logout">
-        <p><a href="logout.php">Cerrar Sesion</a></p>
-    </div>
 </main>
 @endsection

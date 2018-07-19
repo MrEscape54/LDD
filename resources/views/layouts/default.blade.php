@@ -36,7 +36,7 @@
                         </li>
                     @else
                         <li class="avatar-container">
-                            <a><img src="{{ Auth::user()->avatar }}"></a>
+                            <a><img src="{{ 'storage/' . Auth::user()->avatar }}"></a>
                             <span>
                                 <div class="submenu-container">
                                     <div class="submenu-items">
@@ -46,7 +46,7 @@
                                                             document.getElementById('logout-form').submit();">
                                                 {{ __('Salir') }}
                                             </a></li>
-                                        <li class="desplegable"><a href="perfil">Perfil</a></li>
+                                        <li class="desplegable"><a href="{{ route('profile') }}">Perfil</a></li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf

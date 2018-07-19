@@ -84,8 +84,6 @@ font-size: 0.8em;
 padding-bottom: 5px;
 }
 
-.avatar-container{position: relative;}
-
 .ingreso span{
   position: absolute;
   right: 0;
@@ -109,8 +107,6 @@ padding-bottom: 5px;
   font-size: 0.9em;
   padding: 2px;
 }
-
-.ingreso img{height: 30px; border-radius: 5px;}
 
 .submenu-container{
   display: none;
