@@ -13,7 +13,7 @@ class BrandsTableSeeder extends Seeder
     public function run()
     {
         $brands = [
-            'Breget', 
+            'Breguet', 
             'Breitling', 
             'Cartier', 
             'Longines', 
