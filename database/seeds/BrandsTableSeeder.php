@@ -21,7 +21,7 @@ class BrandsTableSeeder extends Seeder
             'Omega', 
             'Piaget', 
             'Rolex', 
-            'Tag Heuer', 
+            'TAG', 
             'Zenith'
         ];
 

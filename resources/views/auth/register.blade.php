@@ -6,7 +6,7 @@
                 <p>Registrarse</p>
                 <p><a href="login">Ya tengo cuenta</a></p>
             </div>
-            <form method="post" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="input-group input-group-icon">
                     <input type="text" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre de usuario" />

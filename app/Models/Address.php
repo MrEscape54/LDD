@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Address extends Model
 {
-    protected $guard = [];
+    protected $guarded = [];
 
     public function user()
     {

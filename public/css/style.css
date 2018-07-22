@@ -1,6 +1,89 @@
 body{
   font-family: 'Montserrat', sans-serif;
 }
+.pagination{
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+  border-radius: .25rem;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  font-size: 0.85em;
+}
+
+.page-link:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+
+.page-item:first-child .page-link {
+  margin-left: 0;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+.table td, .table th {
+  padding: .75rem;
+  font-size: 0.8em;
+  vertical-align: top;
+  text-align: center;
+  border-top: 1px solid #dee2e6;
+}
+
+.btn{
+  color: #fff;
+  border-style: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn a{
+  color: white;
+  text-decoration: none;
+}
+
+.btn-primary{
+  border-color: #28a745;
+  background-color: #28a745;
+  margin: 5px;
+  font-size: 0.85em;
+}
+
+.btn-secondary{
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-danger{
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.back-office{margin-top: 10px;}
 
 ul{list-style: none; padding: 0;}
 

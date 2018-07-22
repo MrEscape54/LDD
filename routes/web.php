@@ -10,7 +10,7 @@ Route::get('profile', 'ProfileController@profile')->middleware('auth')->name('pr
 Route::resources([
     'brands' => 'BrandController',
     'categories' => 'CategoryController',
-    'genres' => 'GenreController'
+    'products' => 'ProductController'
 ]);
 
 Auth::routes();
