@@ -6,10 +6,11 @@ use App\Models\Product;
 use App\Models\Brand;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Contracts\Session\Session;
 
 class ProductController extends Controller
 {
-
+    // Only admins are allowed to perform the functions below
     public function __construct()
     {
         $this->middleware('admin');
@@ -68,8 +69,9 @@ class ProductController extends Controller
             'price' => $request['price'],
             'isAvailable' => $request['isAvailable'],
             'picture' =>$name,
-        ]);
+        ]); 
 
+        $request->session()->flash('message', 'Producto creado satisfactoriamente!');
         return redirect()->route('products.index');
     }
 
@@ -93,6 +95,8 @@ class ProductController extends Controller
     public function edit($id)
     {
         $product = Product::find($id);
+
+        session()->flash('message', 'Producto actualizado satisfactoriamente!');
         return view('products.edit', compact('product'));
     }
 
@@ -132,6 +136,7 @@ class ProductController extends Controller
             'picture' =>$name,
         ]);
 
+        $request->session()->flash('message', 'Producto actualizado satisfactoriamente!');
         return redirect()->route('products.index');
     }
 
@@ -142,9 +147,10 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
+    {    
         $product = Product::find($id);
         $product->delete();
+        session()->flash('message', 'Producto eliminado satisfactoriamente!');
         return redirect()->route('products.index');
     }
 }

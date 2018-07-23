@@ -2,6 +2,15 @@
 
 @section('content')
 
+@if (Session::has('message'))
+<div class="warning">
+    <div class="input-icon">
+    <i style="font-size:1.5em; color:#28A745; margin-right:5px;" class="fas fa-check"></i>
+    </div>
+    <p>{{ Session::get('message') }}</p>
+</div>
+@endif
+
 <button type="button" class="btn btn-primary"><a href="{{route('products.create')}}">Agregar Producto</a></button>
 
 <table class="table table-striped">
