@@ -15,7 +15,7 @@ class Admin
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user()['isAdmin'] === 0) {
+        if ($request->user()->isAdmin === 0) {
             abort(403, 'Unauthorized action.');
         }
 

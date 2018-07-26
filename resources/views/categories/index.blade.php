@@ -11,31 +11,31 @@
 </div>
 @endif
 
-<button type="button" class="btn btn-primary"><a href="{{route('brands.create')}}">Agregar Marca</a></button>
+<button type="button" class="btn btn-primary"><a href="{{route('categories.create')}}">Agregar Categoría</a></button>
 
 <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">id</th>
-          <th scope="col">brand_name</th>
+          <th scope="col">category_name</th>
           <th scope="col">Editar</th>
           <th scope="col">Eliminar</th>
         </tr>
       </thead>
       <tbody>
-         @foreach ($brands as $brand) 
+         @foreach ($categories as $category) 
 
          <tr>
-            <th scope="row">{{$brand->id}}</th>
-            <td>{{$brand->brand_name}}</td>
+            <th scope="row">{{$category->id}}</th>
+            <td>{{$category->category_name}}</td>
 
             <td>
               <button type="button" class="btn btn-secondary">
-                <a href="{{action('BrandController@edit', $brand['id'])}}">Editar</a>
+                <a href="{{action('CategoryController@edit', $category['id'])}}">Editar</a>
               </button>
             </td>
             <td>
-              <form action="{{action('BrandController@destroy', $brand['id'])}}" method="post">
+              <form action="{{action('CategoryController@destroy', $category['id'])}}" method="post">
                 @csrf
                 <input name="_method" type="hidden" value="DELETE">
                 <button class="btn btn-danger" type="submit">Eliminar</button>

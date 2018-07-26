@@ -58,6 +58,7 @@ class ProductController extends Controller
         ]);
 
         $file = $request->file('picture');
+        //$name = $file->store('img/Brands/'.$brand);
         $name = 'img/Brands/' . $brand . '/' . $file->getClientOriginalName();
         $file->move(public_path() . '/img/Brands/' . $brand, $file->getClientOriginalName());
 

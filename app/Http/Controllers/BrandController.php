@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 use App\Models\Brand;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Contracts\Session\Session;
 
 class BrandController extends Controller
 {
+    // Only admins are allowed to perform the functions below
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +34,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('brands.create');
     }
 
     /**
@@ -37,7 +45,16 @@ class BrandController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'brand_name' => 'required',
+        ]);
+
+        Brand::create([
+            'brand_name' => $request['brand_name'],
+        ]); 
+
+        $request->session()->flash('message', 'Marca creada exitosamente!');
+        return redirect()->route('brands.index');
     }
 
     /**
@@ -59,7 +76,10 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = Brand::find($id);
+
+        session()->flash('message', 'Marca actualizada exitosamente!');
+        return view('brands.edit', compact('brand'));
     }
 
     /**
@@ -71,7 +91,16 @@ class BrandController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'brand_name' => 'required',
+        ]);
+
+        Brand::find($id)->update([
+            'brand_name' => $request['brand_name'],
+        ]);
+
+        $request->session()->flash('message', 'Marca actualizada exitosamente!');
+        return redirect()->route('brands.index');
     }
 
     /**
@@ -82,6 +111,9 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $brand = Brand::find($id);
+        $brand->delete();
+        session()->flash('message', 'Marca eliminada exitosamente!');
+        return redirect()->route('brands.index');
     }
 }

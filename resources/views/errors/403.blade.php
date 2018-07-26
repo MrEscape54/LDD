@@ -7,6 +7,6 @@
       </div>
 </main>
 @php 
-   header( "refresh:2;url=/" );
+   header( "refresh:2; url=/" );
 @endphp
 @endsection

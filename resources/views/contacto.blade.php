@@ -8,7 +8,7 @@
                class="boton-tr boton-mapa" target="_blank">Ver mapa</a>
         </div>
         <div class="contact">
-            <form>
+            <form method="post">
                 <div class="input-group input-group-icon">
                     <input type="text" placeholder="Nombre" />
                     <div class="input-icon">
