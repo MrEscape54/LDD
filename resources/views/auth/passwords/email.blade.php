@@ -2,16 +2,17 @@
 
 @section('content')
 <main class="login-page">
+
+        @if (session('status'))
+        <div class="password-sent" role="alert">
+            {{ session('status') }}
+        </div>
+        @endif
+
     <div class="contact login">
         <div class="titulos">
             <p>{{ __('Reset Password') }}</p>
         </div>
-
-        @if (session('status'))
-        <div class="alert alert-success" role="alert">
-            {{ session('status') }}
-        </div>
-        @endif
 
         <form method="post" action="{{ route('password.email') }}">
             @csrf
