@@ -13,7 +13,13 @@ class ProductController extends Controller
     // Only admins are allowed to perform the functions below
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('admin')->except(['showProducts']);
+    }
+
+    public function showProducts() {
+        $products = Product::paginate(20);
+
+        return view('products.watches')->with('products', $products);
     }
     /**
      * Display a listing of the resource.
@@ -59,7 +65,7 @@ class ProductController extends Controller
 
         $file = $request->file('picture');
         //$name = $file->store('img/Brands/'.$brand);
-        $name = 'img/Brands/' . $brand . '/' . $file->getClientOriginalName();
+        $name = '/img/Brands/' . $brand . '/' . $file->getClientOriginalName();
         $file->move(public_path() . '/img/Brands/' . $brand, $file->getClientOriginalName());
 
         Product::create([
@@ -124,7 +130,7 @@ class ProductController extends Controller
         ]);
 
         $file = $request->file('picture');
-        $name = 'img/Brands/' . $brand . '/' . $file->getClientOriginalName();
+        $name = '/img/Brands/' . $brand . '/' . $file->getClientOriginalName();
         $file->move(public_path() . '/img/Brands/' . $brand, $file->getClientOriginalName());
 
         Product::find($id)->update([

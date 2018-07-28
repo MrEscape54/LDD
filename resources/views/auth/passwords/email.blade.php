@@ -26,7 +26,7 @@
 
             <div class="input-group">
                 <input type="submit" value="Restablecer" />
-            </div>
+            </div
         </form>
 
     </div>

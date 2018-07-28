@@ -85,6 +85,18 @@ body{
 
 .back-office{margin-top: 10px;}
 
+.prod-description{
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.prices{
+  position: absolute;
+    bottom: 41px;
+    right: 0;
+    left: 0;
+}
+
 ul{list-style: none; padding: 0;}
 
 .submenu{display: none;}
@@ -345,10 +357,15 @@ margin: 0 auto 30px;
 background-color: #EFECEA;
 overflow: hidden;
 padding-bottom: 30px;
+position: relative;
 }
 
 .collections .foto {
 width: 100%;
+}
+
+.coll-watches{
+  padding-bottom: 70px;
 }
 
 .collections .logo{
@@ -372,6 +389,13 @@ width: 100%;
   text-decoration: none;
   margin: 0 auto;
   transition: all .4s;
+}
+
+.boton-tr-watches{
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
 }
 
 footer{
