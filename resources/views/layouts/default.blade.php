@@ -36,7 +36,7 @@
                         </li>
                     @else
                         <li class="avatar-container">
-                            <a><img src="{{ 'storage/' . Auth::user()->avatar }}"></a>
+                            <a><img src="{{ '/storage/' . Auth::user()->avatar }}"></a>
                             <span>
                                 <div class="submenu-container">
                                     <div class="submenu-items">
