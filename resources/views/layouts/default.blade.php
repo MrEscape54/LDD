@@ -69,38 +69,40 @@
         <nav id="MainNavOuter">
             <span>Marca</span>
             <ul id="MainNav" class="">
-                <li class="active"><a href="#">Breguet</a></li>
-                <li><a href="#">Breitling</a></li>
-                <li><a href="#">Cartier</a></li>
-                <li><a href="#">Longines</a></li>
-                <li><a href="#">Montblanc</a></li>
-                <li><a href="#">Omega</a></li>
-                <li><a href="#">Piaget</a></li>
-                <li><a href="#">Rolex</a></li>
-                <li><a href="#">TAG Heuer</a></li>
-                <li class="last"><a href="#">Todos</a></li>
+                <li class="active"><a href="{{action('ProductController@showByBrand', 1)}}">Breguet</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 2)}}">Breitling</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 3)}}">Cartier</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 4)}}">Longines</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 5)}}">Montblanc</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 6)}}">Omega</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 7)}}">Piaget</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 8)}}">Rolex</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 9)}}">TAG Heuer</a></li>
+                <li><a href="{{action('ProductController@showByBrand', 10)}}">Zenith</a></li>
+                <li class="last"><a href="{{action('ProductController@showProducts')}}">Todos</a></li>
             </ul>
         </nav>
 
         <nav id="SubNavOuter">
             <span>Tipo</span>
             <ul id="SubNav" class="">
-                <li class="active"><a href="#">Deportivo</a></li>
-                <li><a href="#">Automático</a></li>
-                <li><a href="#">Cronógrafo</a></li>
-                <li><a href="#">Buceo</a></li>
-                <li><a href="#">Smart</a></li>
-                <li><a href="#">Vintage</a></li>
-                <li class="last"> <a href="#">Todos</a></li>
+                <li class="active"><a href="{{action('ProductController@showByCategory', 1)}}">Deportivo</a></li>
+                <li><a href="{{action('ProductController@showByCategory', 2)}}">Automático</a></li>
+                <li><a href="{{action('ProductController@showByCategory', 3)}}">Cronógrafo</a></li>
+                <li><a href="{{action('ProductController@showByCategory', 4)}}">Buceo</a></li>
+                <li><a href="{{action('ProductController@showByCategory', 5)}}">Smart</a></li>
+                <li><a href="{{action('ProductController@showByCategory', 6)}}">Vintage</a></li>
+                <li class="last"><a href="{{action('ProductController@showByCategory', 6)}}">Todos</a></li>
+
             </ul>
         </nav>
 
         <nav id="GenderOuter">
             <span>Género</span>
             <ul id="Gender" class="">
-                <li class="active"><a href="#">Hombre</a></li>
-                <li><a href="#">Mujer</a></li>
-                <li class="last"><a href="#">Todos</a></li>
+                <li class="active"><a href="{{action('ProductController@showByGenre', 1)}}">Hombre</a></li>
+                <li><a href="{{action('ProductController@showByGenre', 2)}}">Mujer</a></li>
+                <li class="last"><a href="{{action('ProductController@showProducts')}}">Todos</a></li>
             </ul>
         </nav>
     </header>

@@ -13,7 +13,7 @@ class ProductController extends Controller
     // Only admins are allowed to perform the functions below
     public function __construct()
     {
-        $this->middleware('admin')->except(['showProducts']);
+        $this->middleware('admin')->except(['showProducts', 'showByBrand', 'showByCategory', 'showByGenre']);
     }
 
     public function showProducts() {
@@ -21,6 +21,25 @@ class ProductController extends Controller
 
         return view('products.watches')->with('products', $products);
     }
+
+    public function showByBrand($id) {
+        $products = Product::where('brand_id', '=', $id)->paginate(20);
+
+        return view('products.watches')->with('products', $products);
+    }
+
+    public function showByCategory($id) {
+        $products = Product::where('category_id', '=', $id)->paginate(20);
+
+        return view('products.watches')->with('products', $products);
+    }
+
+    public function showByGenre($id) {
+        $products = Product::where('genre_id', '=', $id)->paginate(20);
+
+        return view('products.watches')->with('products', $products);
+    }
+
     /**
      * Display a listing of the resource.
      *
