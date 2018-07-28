@@ -36,7 +36,7 @@
                         </li>
                     @else
                         <li class="avatar-container">
-                            <a><img src="{{ '/storage/' . Auth::user()->avatar }}"></a>
+                            <a><img src="/storage/{{Auth::user()->avatar }}"></a>
                             <span>
                                 <div class="submenu-container">
                                     <div class="submenu-items">
@@ -46,7 +46,7 @@
                                                             document.getElementById('logout-form').submit();">
                                                 {{ __('Salir') }}
                                             </a></li>
-                                        <li class="desplegable"><a href="{{ route('profile') }}">Perfil</a></li>
+                                        <li class="desplegable"><a href="{{ action('UserController@edit', Auth::user()->id) }}">Perfil</a></li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
@@ -139,8 +139,8 @@
                     <ul>
                         <li><a href="/">Inicio</a></li>
                         <li><a href="#">Acerca de</a></li>
-                        <li><a href="contacto">Contacto</a></li>
-                        <li><a href="faq">FAQ</a></li>
+                        <li><a href="{{action('ContactoController@contacto')}}">Contacto</a></li>
+                        <li><a href={{action('FaqController@faq')}}>FAQ</a></li>
                     </ul>
                 </div>
 

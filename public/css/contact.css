@@ -240,11 +240,6 @@ input[type="submit"] + a{
      width: 50%;
    }
 
-   .profile-pic {
-     width: 50%;
-     margin: 0 auto;
-   }
-
    .profile-data {
      width: 80%;
      margin: 0 auto;
@@ -267,17 +262,14 @@ input[type="submit"] + a{
       width: 60%;
   }
 
-  .profile-pic {
-    width: 30%;
-  }
-
-
   main .login, main .signin, .warning{
       width: 40%;
   }
 
   .profile-pic {
     width: 30%;
+    text-align: center;
+    margin: 0 auto;
   }
 
   .profile-data {
