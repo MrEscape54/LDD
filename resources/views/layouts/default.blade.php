@@ -46,7 +46,7 @@
                                                             document.getElementById('logout-form').submit();">
                                                 {{ __('Salir') }}
                                             </a></li>
-                                        <li class="desplegable"><a href="{{ action('UserController@edit', Auth::user()->id) }}">Perfil</a></li>
+                                        <li class="desplegable"><a href="{{ route('users.edit', Auth::user()->id) }}">Perfil</a></li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
@@ -69,30 +69,30 @@
         <nav id="MainNavOuter">
             <span>Marca</span>
             <ul id="MainNav" class="">
-                <li class="active"><a href="{{action('ProductController@showByBrand', 1)}}">Breguet</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 2)}}">Breitling</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 3)}}">Cartier</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 4)}}">Longines</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 5)}}">Montblanc</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 6)}}">Omega</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 7)}}">Piaget</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 8)}}">Rolex</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 9)}}">TAG Heuer</a></li>
-                <li><a href="{{action('ProductController@showByBrand', 10)}}">Zenith</a></li>
-                <li class="last"><a href="{{action('ProductController@showProducts')}}">Todos</a></li>
+                <li class="active"><a href="{{route('products.brand', 1)}}">Breguet</a></li>
+                <li><a href="{{route('products.brand', 2)}}">Breitling</a></li>
+                <li><a href="{{route('products.brand', 3)}}">Cartier</a></li>
+                <li><a href="{{route('products.brand', 4)}}">Longines</a></li>
+                <li><a href="{{route('products.brand', 5)}}">Montblanc</a></li>
+                <li><a href="{{route('products.brand', 6)}}">Omega</a></li>
+                <li><a href="{{route('products.brand', 7)}}">Piaget</a></li>
+                <li><a href="{{route('products.brand', 8)}}">Rolex</a></li>
+                <li><a href="{{route('products.brand', 9)}}">TAG Heuer</a></li>
+                <li><a href="{{route('products.brand', 10)}}">Zenith</a></li>
+                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
             </ul>
         </nav>
 
         <nav id="SubNavOuter">
             <span>Tipo</span>
             <ul id="SubNav" class="">
-                <li class="active"><a href="{{action('ProductController@showByCategory', 1)}}">Deportivo</a></li>
-                <li><a href="{{action('ProductController@showByCategory', 2)}}">Automático</a></li>
-                <li><a href="{{action('ProductController@showByCategory', 3)}}">Cronógrafo</a></li>
-                <li><a href="{{action('ProductController@showByCategory', 4)}}">Buceo</a></li>
-                <li><a href="{{action('ProductController@showByCategory', 5)}}">Smart</a></li>
-                <li><a href="{{action('ProductController@showByCategory', 6)}}">Vintage</a></li>
-                <li class="last"><a href="{{action('ProductController@showByCategory', 6)}}">Todos</a></li>
+                <li class="active"><a href="{{route('products.category', 1)}}">Deportivo</a></li>
+                <li><a href="{{route('products.category', 2)}}">Automático</a></li>
+                <li><a href="{{route('products.category', 3)}}">Cronógrafo</a></li>
+                <li><a href="{{route('products.category', 4)}}">Buceo</a></li>
+                <li><a href="{{route('products.category', 5)}}">Smart</a></li>
+                <li><a href="{{route('products.category', 6)}}">Vintage</a></li>
+                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
 
             </ul>
         </nav>
@@ -100,9 +100,9 @@
         <nav id="GenderOuter">
             <span>Género</span>
             <ul id="Gender" class="">
-                <li class="active"><a href="{{action('ProductController@showByGenre', 1)}}">Hombre</a></li>
-                <li><a href="{{action('ProductController@showByGenre', 2)}}">Mujer</a></li>
-                <li class="last"><a href="{{action('ProductController@showProducts')}}">Todos</a></li>
+                <li class="active"><a href="{{route('products.genre', 1)}}">Hombre</a></li>
+                <li><a href="{{route('products.genre', 2)}}">Mujer</a></li>
+                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
             </ul>
         </nav>
     </header>
@@ -139,8 +139,8 @@
                     <ul>
                         <li><a href="/">Inicio</a></li>
                         <li><a href="#">Acerca de</a></li>
-                        <li><a href="{{action('ContactoController@contacto')}}">Contacto</a></li>
-                        <li><a href={{action('FaqController@faq')}}>FAQ</a></li>
+                        <li><a href="{{route('contacto')}}">Contacto</a></li>
+                        <li><a href={{route('faq')}}>FAQ</a></li>
                     </ul>
                 </div>
 

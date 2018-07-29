@@ -50,18 +50,18 @@
         </section>
         <div class="brands">
             <ul>
-                <li><a href="{{action('ProductController@showByBrand', 1)}}"><img src="img/logos/breguet.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 2)}}"><img src="img//logos/breitling-logo-update-1.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 3)}}"><img src="img/logos/cartier.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 4)}}"><img src="img/logos/longines.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 5)}}"><img src="img/logos/montblanc.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 6)}}"><img src="img/logos/omega.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 7)}}"><img src="img/logos/piaget.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 8)}}"><img src="img/logos/rolex.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 9)}}"><img src="img/logos/tag-heuer.png" alt=""></a></li>
-                <li><a href="{{action('ProductController@showByBrand', 10)}}"><img src="img/logos/zenith.jpg" alt=""></a></li>
+                <li><a href="{{route('products.brand', 1)}}"><img src="img/logos/breguet.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 2)}}"><img src="img//logos/breitling-logo-update-1.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 3)}}"><img src="img/logos/cartier.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 4)}}"><img src="img/logos/longines.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 5)}}"><img src="img/logos/montblanc.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 6)}}"><img src="img/logos/omega.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 7)}}"><img src="img/logos/piaget.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 8)}}"><img src="img/logos/rolex.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 9)}}"><img src="img/logos/tag-heuer.png" alt=""></a></li>
+                <li><a href="{{route('products.brand', 10)}}"><img src="img/logos/zenith.jpg" alt=""></a></li>
             </ul>
-            <a class="boton-tr" href="{{action('ProductController@showProducts')}}">todas las marcas</a>
+            <a class="boton-tr" href="{{route('products.watches')}}">todas las marcas</a>
         </div>
         <hr style="border:0.2px solid #ccc; width: 80%; margin: 0 auto;">
         <div class="destacados">
@@ -69,22 +69,22 @@
             <div class="collections">
                 <img class="foto" src="img/collections/cartier-brand.jpg">
                     <img class="logo" src="img/collections/cartier.png">
-                    <a class="boton-tr" href="{{action('ProductController@showByBrand', 3)}}">Ver colección</a>
+                    <a class="boton-tr" href="{{route('products.brand', 3)}}">Ver colección</a>
             </div>
             <div class="collections">
                 <img class="foto" src="img/collections/brand-hublot.jpg">
                 <img class="logo" src="img/collections/hublot.png">
-                <a class="boton-tr" href="{{action('ProductController@showByBrand', 4)}}">Ver colección</a>
+                <a class="boton-tr" href="{{route('products.brand', 4)}}">Ver colección</a>
             </div>
             <div class="collections">
                 <img class="foto" src="img/collections/iwc-image.jpg">
                 <img class="logo" src="img/collections/iwc.png">
-                <a class="boton-tr" href="{{action('ProductController@showByBrand', 10)}}">Ver colección</a>
+                <a class="boton-tr" href="{{route('products.brand', 10)}}">Ver colección</a>
             </div>
             <div class="collections">
                 <img class="foto" src="img/collections/omega-brand.jpg">
                 <img class="logo" src="img/collections/omega.png">
-                <a class="boton-tr" href="{{action('ProductController@showByBrand', 6)}}">Ver colección</a>
+                <a class="boton-tr" href="{{route('products.brand', 6)}}">Ver colección</a>
             </div>
         </div>
     </main>
