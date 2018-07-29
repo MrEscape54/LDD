@@ -37,7 +37,7 @@
             <td>
               <form action="{{action('BrandController@destroy', $brand['id'])}}" method="post">
                 @csrf
-                <input name="_method" type="hidden" value="DELETE">
+                @method('DELETE')
                 <button class="btn btn-danger" type="submit">Eliminar</button>
               </form>
             </td>

@@ -7,7 +7,7 @@
             </div>
             <form method="POST" action="{{ route('categories.update',$category->id) }}">
                 @csrf
-                <input name="_method" type="hidden" value="PATCH" role="form">
+                @method('PATCH')
                 <div class="input-group input-group-icon">
                     <input type="text" name="category_name" value="{{ $category->category_name }}"/>
                     <div class="input-icon">

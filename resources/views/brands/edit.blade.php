@@ -7,7 +7,7 @@
             </div>
             <form method="POST" action="{{ route('brands.update',$brand->id) }}">
                 @csrf
-                <input name="_method" type="hidden" value="PATCH" role="form">
+                @method('PATCH')
                 <div class="input-group input-group-icon">
                     <input type="text" name="brand_name" value="{{ $brand->brand_name }}"/>
                     <div class="input-icon">

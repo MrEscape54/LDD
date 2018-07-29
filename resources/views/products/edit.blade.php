@@ -7,7 +7,7 @@
             </div>
             <form method="POST" action="{{ route('products.update',$product->id) }}" enctype="multipart/form-data">
                 @csrf
-                <input name="_method" type="hidden" value="PATCH" role="form">
+                @method('PATCH')
                 <div class="input-group input-group-icon">
                     <input type="hidden" name="brand_id" value="{{ $product->brand_id }}" min="1"/>
                     <div class="input-icon">

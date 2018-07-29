@@ -7,7 +7,7 @@
             </div>
             <form method="POST" action="{{ route('users.update',$user->id) }}" enctype="multipart/form-data">
                 @csrf
-                <input name="_method" type="hidden" value="PATCH" role="form">
+                @method('PATCH')
                 <div class="input-group input-group-icon">
                     <input type="text" name="nombre" value="{{ $user->name }}" placeholder="Nombre de usuario" />
                     <div class="input-icon">
