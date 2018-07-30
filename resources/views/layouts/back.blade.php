@@ -32,6 +32,20 @@
 
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 <script src="{{URL::asset('js/app.js')}}"></script>
+<script>
+
+    let x = document.getElementsByClassName('btn-danger')
+
+    for (let i = 0; i < x.length; i++) {
+        x[i].onclick = function() {
+            let conf = confirm('¿Está seguro de eliminar el item?')     
+            if(!conf)  
+                return false
+ 
+        }  
+    }
+
+</script>
 </body>
 </html>
 
