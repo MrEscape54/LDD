@@ -47,11 +47,12 @@
                                                 {{ __('Salir') }}
                                             </a></li>
                                         <li class="desplegable"><a href="{{ route('users.edit', Auth::user()->id) }}">Perfil</a></li>
-                                        <li class="desplegable"><a href="{{ route('products.index') }}">Productos</a></li>
-                                        <li class="desplegable"><a href="{{ route('categories.index') }}">Categorias</a></li>
-                                        <li class="desplegable"><a href="{{ route('brands.index') }}">Marcas</a></li>
-                                        <li class="desplegable"><a href="{{ route('users.index') }}">Usuarios</a></li>
-
+                                        @if (Auth::user()->isAdmin === 1) 
+                                            <li class="desplegable"><a href="{{ route('products.index') }}">Productos</a></li>
+                                            <li class="desplegable"><a href="{{ route('categories.index') }}">Categorias</a></li>
+                                            <li class="desplegable"><a href="{{ route('brands.index') }}">Marcas</a></li>
+                                            <li class="desplegable"><a href="{{ route('users.index') }}">Usuarios</a></li>
+                                        @endif
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
                                         </form>

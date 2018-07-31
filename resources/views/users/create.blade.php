@@ -3,8 +3,7 @@
 <main class="login-page">
         <div class="contact signin">
         <div class="titulos">
-                <p>Registrarse</p>
-                <p><a href="login">Ya tengo cuenta</a></p>
+                <p>Agregar usuario</p>
             </div>
             <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
