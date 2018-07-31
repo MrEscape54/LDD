@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->except('edit');
+        $this->middleware('admin')->except('edit', 'update');
     }
 
     /**
@@ -43,7 +43,7 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {        
+    {
         $request->validate([
             'nombre' => 'required|min:3|max:20',
             'email' => 'required|email|unique:users',
@@ -55,7 +55,7 @@ class UserController extends Controller
 
         if($request->hasfile('avatar')){
             $path = $request->file('avatar')->store('avatars');
-        } 
+        }
         else {
             $path = 'avatars/avatar-generico.jpg';
         }
@@ -117,7 +117,7 @@ class UserController extends Controller
 
         if($request->hasfile('avatar')){
             $path = $request->file('avatar')->store('avatars');
-        } 
+        }
         else {
             $path = 'avatars/avatar-generico.jpg';
         }

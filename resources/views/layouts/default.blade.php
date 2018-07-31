@@ -47,6 +47,10 @@
                                                 {{ __('Salir') }}
                                             </a></li>
                                         <li class="desplegable"><a href="{{ route('users.edit', Auth::user()->id) }}">Perfil</a></li>
+                                        <li class="desplegable"><a href="{{ route('products.index') }}">Productos</a></li>
+                                        <li class="desplegable"><a href="{{ route('categories.index') }}">Categorias</a></li>
+                                        <li class="desplegable"><a href="{{ route('brands.index') }}">Marcas</a></li>
+                                        <li class="desplegable"><a href="{{ route('users.index') }}">Usuarios</a></li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
@@ -160,4 +164,3 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 </body>
 </html>
-

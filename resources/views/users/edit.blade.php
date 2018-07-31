@@ -48,7 +48,7 @@
                     </div>
                     <span class="obligatorio" >{{ $errors->first('avatar') }}</span>
                 </div>
-               
+
                 @if (Auth::User()->isAdmin === 1)
                 <div class="input-group input-group-icon">
                 <input type="number"  name="isAdmin" value="{{ $user->isAdmin }}" placeholder="Es admin (1 para si - 0 para no)" />
@@ -59,7 +59,7 @@
                 @endif
 
                 <div class="input-group">
-                    <input type="submit" value="Registrarse" />
+                    <input type="submit" value="Actualizar" />
                     <input type="reset" value="Limpiar campos" />
                 </div>
             </form>

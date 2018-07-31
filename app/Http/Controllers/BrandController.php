@@ -51,7 +51,7 @@ class BrandController extends Controller
 
         Brand::create([
             'brand_name' => $request['brand_name'],
-        ]); 
+        ]);
 
         $request->session()->flash('message', 'Marca creada exitosamente!');
         return redirect()->route('brands.index');
@@ -89,13 +89,13 @@ class BrandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id) // test changing it to: public function update(Request $request, Brand $brand)
     {
         $request->validate([
             'brand_name' => 'required',
         ]);
 
-        Brand::find($id)->update([
+        Brand::find($id)->update([  //test changing it to: $brand->update([
             'brand_name' => $request['brand_name'],
         ]);
 
