@@ -23,10 +23,15 @@ class UserController extends Controller
 
     public function editProfile($id) {
 
+        if (Auth::user()->id != $id) {
+            return redirect()->route('/');
+        }
+        else {
         $user = User::find($id);
 
         session()->flash('message', 'Usuario actualizado satisfactoriamente!');
         return view('users.editProfile', compact('user'));
+        }
     }
 
     public function updateProfile(Request $request, $id) {

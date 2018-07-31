@@ -1,4 +1,4 @@
-@extends ('layouts.back')
+@extends ('layouts.default')
 @section('content')
 <main class="login-page">
         <div class="contact signin">
