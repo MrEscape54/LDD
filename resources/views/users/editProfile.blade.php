@@ -5,7 +5,7 @@
             <div class="titulos">
                 <p>Editar Usuario</p>
             </div>
-            <form method="POST" action="{{ route('users.update',$user->id) }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('users.updateProfile',$user->id) }}" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
                 <div class="input-group input-group-icon">
@@ -14,8 +14,24 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <span class="obligatorio" >{{ $errors->first('nombre') }}</span>
-
                 </div>
+
+                <div class="input-group input-group-icon">
+                    <input type="text" name="primer_nombre" value="{{ $user->first_name }}" placeholder="Primer Nombre" />
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="obligatorio" >{{ $errors->first('primer_nombre') }}</span>
+                </div>
+
+                <div class="input-group input-group-icon">
+                    <input type="text" name="apellido" value="{{ $user->last_name }}" placeholder="Apellido" />
+                    <div class="input-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <span class="obligatorio" >{{ $errors->first('apellido') }}</span>
+                </div>
+
                 <div class="input-group input-group-icon">
                     <input type="email" name="email" value="{{ $user->email }}" placeholder="Correo electrónico" />
                     <div class="input-icon">
@@ -25,20 +41,11 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="tel" name="teléfono" value="{{ $user->phone }}"
-                           placeholder="Teléfono (opcional) xxx-xxxx-xxxx" />
+                    <input type="tel" name="teléfono" value="{{ $user->phone }}" placeholder="Teléfono (opcional) xxx-xxxx-xxxx" />
                     <div class="input-icon">
                         <i class="fas fa-phone"></i>
                     </div>
                     <span class="obligatorio" >{{ $errors->first('teléfono') }}</span>
-                </div>
-
-                <div class="input-group input-group-icon">
-                <input type="hidden"  name="contraseña" value="{{ $user->password }}" placeholder="Contraseña (mayúscula y número requerido)" />
-                    <div class="input-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <span class="obligatorio" >{{ $errors->first('contraseña') }}</span>
                 </div>
 
                 <div class="input-group input-group-icon">
@@ -47,13 +54,6 @@
                     <i class="fas fa-file-image"></i>
                     </div>
                     <span class="obligatorio" >{{ $errors->first('avatar') }}</span>
-                </div>
-
-                <div class="input-group input-group-icon">
-                <input type="number"  name="isAdmin" value="{{ $user->isAdmin }}" placeholder="Es admin (1 para si - 0 para no)" />
-                    <div class="input-icon">
-                        <i class="fas fa-user"></i>
-                    </div>
                 </div>
 
                 <div class="input-group">

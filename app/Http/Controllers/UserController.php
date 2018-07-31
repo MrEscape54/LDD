@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Session\Session;
@@ -11,7 +12,7 @@ class UserController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('admin')->except(['editProfile', 'updateProfile']);
     }
 
     /**
@@ -19,6 +20,45 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function editProfile($id) {
+
+        $user = User::find($id);
+
+        session()->flash('message', 'Usuario actualizado satisfactoriamente!');
+        return view('users.editProfile', compact('user'));
+    }
+
+    public function updateProfile(Request $request, $id) {
+        $request->validate([
+            'nombre' => 'required|min:3|max:20',
+            'primer_nombre' => 'required|min:3|max:20',
+            'apellido' => 'nullable|min:2|max:20',
+            'email' => 'required|email',
+            'teléfono' => 'nullable|regex:/[0-9]{3}-[0-9]{4}-[0-9]{4}/',
+            'avatar' => 'image|nullable',
+        ]);
+
+        if($request->hasfile('avatar')){
+            $path = $request->file('avatar')->store('avatars');
+        }
+        else {
+            $path = Auth::user()->avatar;
+        }
+
+        User::find($id)->update([
+            'name' => $request['nombre'],
+            'first_name' => $request['primer_nombre'],
+            'last_name' => $request['apellido'],
+            'email' => $request['email'],
+            'phone' => $request['teléfono'],
+            'avatar' =>$path,
+        ]);
+
+        $request->session()->flash('message', 'Usuario actualizado satisfactoriamente!');
+        return redirect()->route('/');
+    }
+
     public function index()
     {
         $users = User::paginate(24);
