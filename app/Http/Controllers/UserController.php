@@ -60,7 +60,7 @@ class UserController extends Controller
             'avatar' =>$path,
         ]);
 
-        $request->session()->flash('message', 'Usuario actualizado satisfactoriamente!');
+        //$request->session()->flash('message', 'Usuario actualizado satisfactoriamente!');
         return redirect()->route('/');
     }
 
