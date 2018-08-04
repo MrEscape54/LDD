@@ -5,7 +5,8 @@ use App\Http\Controllers\ProductController;
 
 Route::get('/', 'IndexController@index')->name('/');
 Route::get('faq', 'FaqController@faq')->name('faq');
-Route::get('contacto', 'ContactoController@contacto')->name('contacto');
+Route::get('contact', 'ContactController@contact')->name('contact');
+Route::post('contact', 'ContactController@sendContact')->name('contact.send');
 
 Route::get('products/watches', 'ProductController@showProducts')->name('products.watches'); //debe estar antes que el resource
 Route::get('products/watches/brands/{brand}', 'ProductController@showByBrand')->name('products.brand');

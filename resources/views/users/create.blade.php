@@ -6,7 +6,7 @@
                 <p>Agregar usuario</p>
             </div>
             <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
-                {{ csrf_field() }}
+                @csrf
                 <div class="input-group input-group-icon">
                     <input type="text" name="nombre" value="{{ old('nombre') }}" placeholder="Nombre de usuario" />
                     <div class="input-icon">

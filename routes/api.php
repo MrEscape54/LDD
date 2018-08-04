@@ -13,6 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/getemail/{email}', 'ApiController@checkEmail');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

@@ -8,18 +8,21 @@
                class="boton-tr boton-mapa" target="_blank">Ver mapa</a>
         </div>
         <div class="contact">
-            <form method="post">
+            <form method="post" action="{{ route('contact.send') }}">
+                @csrf
                 <div class="input-group input-group-icon">
-                    <input type="text" placeholder="Nombre" />
+                    <input name="nombre" type="text" placeholder="Nombre" />
                     <div class="input-icon">
                         <i class="fas fa-user"></i>
                     </div>
+                    <span class="obligatorio" >{{ $errors->first('nombre') }}</span>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="email" placeholder="Correo electrónico" />
+                    <input name="email" type="email" placeholder="Correo electrónico" />
                     <div class="input-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
+                    <span class="obligatorio" >{{ $errors->first('email') }}</span>
                 </div>
                 <div class="input-group">
                     <input type="radio" name="gender" value="hombre" id="gender-male" />
@@ -27,11 +30,20 @@
                     <input type="radio" name="gender" value="mujer" id="gender-female" />
                     <label for="gender-female">Mujer</label>
                 </div>
-                <div class="input-group">
-                    <input type="text" placeholder="Asunto" />
+
+                <div>
+                    <div class="input-group">
+                        <input name="asunto" type="text" placeholder="Asunto" />
+                    </div>
+                    <span class="obligatorio subject-check" >{{ $errors->first('asunto') }}</span>
                 </div>
-                <div class="input-group">
-                    <textarea name="msg" rows="10" placeholder="Escribe tu mensaje aquí"></textarea>
+
+                <div>
+                    <div class="input-group">
+                        <textarea name="mensaje" rows="10" placeholder="Escribe tu mensaje aquí"></textarea>
+                        <span class="obligatorio msg-check" >{{ $errors->first('mensaje') }}</span>
+                    </div>
+                    
                 </div>
                 <div class="input-group send-reset">
                     <input type="submit" value="Enviar" />
