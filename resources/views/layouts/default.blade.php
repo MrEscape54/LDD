@@ -10,19 +10,21 @@
 
    <title>{{ config('app.name', 'LDD') }}</title>
 
-   <!-- Scripts -->
-   <script src="{{ asset('js/app.js') }}" defer></script>
-
+   <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800|Open+Sans+Condensed:300" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/sanitize.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/contact.css">
+    <link id="style_css"  rel="stylesheet" href="/css/style.css">
+    <link id="contact_css"  rel="stylesheet" href="/css/contact.css">
+    <!-- <link rel="stylesheet" href="/css/style2.css">
+    <link rel="stylesheet" href="/css/contact2.css"> -->
+
 </head>
 <body>
 
     <header>
         <div class="search-scart">
+          <button id="styleicon" type="button">Color</button><!-- styleswitcher -->
             <i class="fas fa-search fa-lg"></i>
             <div class="scart">
                 <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
@@ -47,7 +49,7 @@
                                                 {{ __('Salir') }}
                                             </a></li>
                                         <li class="desplegable"><a href="{{ route('users.user', Auth::user()->id) }}">Perfil</a></li>
-                                        @if (Auth::user()->isAdmin === 1) 
+                                        @if (Auth::user()->isAdmin === 1)
                                             <li class="desplegable"><a href="{{ route('products.index') }}">Productos</a></li>
                                             <li class="desplegable"><a href="{{ route('categories.index') }}">Categorias</a></li>
                                             <li class="desplegable"><a href="{{ route('brands.index') }}">Marcas</a></li>
@@ -162,11 +164,17 @@
             <p class="copyright">Copyright 2018 - LDD</p>
         </div>
     </footer>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-    <script src="/js/checkEmail.js"></script>
-    
-    {{-- <script src="/js/register.js"></script> --}}
 
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/styleswitcher.js') }}"></script><!-- styleswitcher -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+
+<!-- ### REVISAR: Algo del siguiente codigo da error y bloquea la ejecucion de styleswitcher.js ###
+     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    <script src="js/checkEmail.js"></script>
+    {{-- <script src="/js/register.js"></script> --}}
+ -->
 
 </body>
 </html>
