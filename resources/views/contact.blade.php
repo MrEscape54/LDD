@@ -11,14 +11,14 @@
             <form method="post" action="{{ route('contact.send') }}">
                 @csrf
                 <div class="input-group input-group-icon">
-                    <input name="nombre" type="text" placeholder="Nombre" />
+                <input name="nombre" type="text" value="{{old('nombre')}}" placeholder="Nombre" />
                     <div class="input-icon">
                         <i class="fas fa-user"></i>
                     </div>
                     <span class="obligatorio" >{{ $errors->first('nombre') }}</span>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input name="email" type="email" placeholder="Correo electrónico" />
+                    <input name="email" type="email" value="{{old('email')}}" placeholder="Correo electrónico" />
                     <div class="input-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
@@ -33,14 +33,14 @@
 
                 <div>
                     <div class="input-group">
-                        <input name="asunto" type="text" placeholder="Asunto" />
+                        <input name="asunto" type="text" value="{{old('asunto')}}" placeholder="Asunto" />
                     </div>
                     <span class="obligatorio subject-check" >{{ $errors->first('asunto') }}</span>
                 </div>
 
                 <div>
                     <div class="input-group">
-                        <textarea name="mensaje" rows="10" placeholder="Escribe tu mensaje aquí"></textarea>
+                        <textarea name="mensaje" rows="10" placeholder="Escribe tu mensaje aquí">{{old('mensaje')}}</textarea>
                         <span class="obligatorio msg-check" >{{ $errors->first('mensaje') }}</span>
                     </div>
                     

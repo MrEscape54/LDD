@@ -17,7 +17,7 @@
         <form method="post" action="{{ route('password.email') }}">
             @csrf
             <div class="input-group input-group-icon">
-                <input type="email" name="email" placeholder="Correo electrónico" value="{{ old('email') }}" autofocus/>
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="Correo electrónico" autofocus/>
                 <div class="input-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
@@ -26,7 +26,7 @@
 
             <div class="input-group">
                 <input type="submit" value="Restablecer" />
-            </div
+            </div>
         </form>
 
     </div>
