@@ -26,7 +26,19 @@
         <div class="search-scart">
           <button id="styleicon" type="button">Color</button>  <!-- styleswitcher -->
 
-          <ul class="nav navbar-nav">  <!-- searchbox -->
+          <div class="search">
+            <i class="fas fa-search fa-lg cart"></i>
+            <input class="search-input" type="text" value="" placeholder="Buscar" name="query">
+          </div>
+          <div class="cart-plus-login">
+            <div class="scart">
+              <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+              <span class="badge">13</span>
+            </div>
+            <div class="ingreso">
+
+
+          <!-- <ul class="nav navbar-nav">  <! searchbox
             <li class="nav-item">
               <form action="/products">
                 <div class="input-group">
@@ -39,12 +51,12 @@
             </li>
           </ul>
 
-            <!-- <i class="fas fa-search fa-lg"></i> -->
+             <i class="fas fa-search fa-lg"></i>
             <div class="scart">
-                <!-- <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a> -->
+                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
                 <span class="badge">13</span>
             </div>
-            <div class="ingreso">
+            <div class="ingreso"> -->
                 <ul>
                     @guest
                         <li>
@@ -80,6 +92,7 @@
                     @endguest
                 </ul>
             </div>
+          </div>
         </div>
         <hr style="border:0.2px solid #ccc; width: 80%;">
         <div class="logo-container">
@@ -183,12 +196,6 @@
     <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
     <script type="text/javascript" src="{{ asset('js/styleswitcher.js') }}"></script><!-- styleswitcher -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-
-<!-- ### AVISO: los siguientes scripts fueron movidos a register.blade.php y login.blade.php ###
-     ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    <script src="js/checkEmail.js"></script>
-    {{-- <script src="/js/register.js"></script> --}}
- -->
 
 </body>
 </html>
