@@ -67,6 +67,9 @@
         </div>
     </main>
 
-<script type="text/javascript" src="{{ URL::asset('js/validacion.js') }}"></script>
+    <!-- Scripts -->
+    <script type="text/javascript" src="{{ URL::asset('js/validacion.js') }}"></script>
+    <script src="js/checkEmail.js"></script>
+    {{-- <script src="/js/register.js"></script> --}}
 
 @endsection

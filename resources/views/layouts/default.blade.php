@@ -8,7 +8,7 @@
    <!-- CSRF Token -->
    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-   <title>{{ config('app.name', 'LDD') }}</title>
+   <title>LDD - Relojes de lujo</title>
 
    <!-- Stylesheets -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700|Open+Sans:800|Open+Sans+Condensed:300" rel="stylesheet">
@@ -170,7 +170,7 @@
     <script type="text/javascript" src="{{ asset('js/styleswitcher.js') }}"></script><!-- styleswitcher -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
-<!-- ### REVISAR: Algo del siguiente codigo da error y bloquea la ejecucion de styleswitcher.js ###
+<!-- ### AVISO: los siguientes scripts fueron movidos a register.blade.php y login.blade.php ###
      ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     <script src="js/checkEmail.js"></script>
     {{-- <script src="/js/register.js"></script> --}}

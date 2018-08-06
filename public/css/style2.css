@@ -1,5 +1,7 @@
 body{
   font-family: 'Montserrat', sans-serif;
+  background-color: #F7F7F7;  /*styleswitcher*/ /* none */
+
 }
 .pagination{
   display: flex;
@@ -230,7 +232,7 @@ padding-bottom: 5px;
 .logo-container {
   width: 152px;
   margin: 0 auto;
-  background-color: #000;  /*styleswitcher*/
+  background-color: #F7F7F7;  /*styleswitcher*/
 }
 
 .logo-container img{
@@ -242,7 +244,7 @@ padding-bottom: 5px;
 .logo-container h4{
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  color: #fff;  /* #3c3c3c; styleswitcher */
+  color:#5d7e95; /*styleswitcher*/ /*#3c3c3c*/
   letter-spacing: 1.2px;
   margin-top: 0;
 }
@@ -255,8 +257,8 @@ padding-bottom: 5px;
 }
 
 #MainNav li, #SubNav li, #Gender li, nav span{
-  border: 1px solid #ececec;;
-  background-color: #000; /*F7F7F7*/
+  border: 1px solid #ececec;
+  background-color: #5d7e95; /*styleswitcher*/ /*F7F7F7*/
   padding: 0 15px;
   height: 45px;
   line-height: 45px;
@@ -267,7 +269,7 @@ padding-bottom: 5px;
 #MainNav li a, #SubNav li a, #Gender li a, nav span{
   text-transform: uppercase;
   text-decoration: none;
-  color: #232323;
+  color: #fff; /*styleswitcher*/ /*#232323*/
   font-size: 0.8em;
 }
 
@@ -294,7 +296,7 @@ width: 100%;
 }
 
 .about{
-  background-color: #000;   /* #f6f6f6 */
+  background-color: #F7F7F7;  /*styleswitcher*/ /* #f6f6f6 */
   padding: 10px 5% 40px;
   text-align: center;
 }
@@ -302,7 +304,7 @@ width: 100%;
 .brands{
   padding: 20px 5% 30px;
   text-align: center;
-  background-color: #000;   /* #f6f6f6 */
+  background-color: #f6f6f6;
 }
 
 .about p{
@@ -379,9 +381,9 @@ width: 100%;
 
 .boton-tr{
   display: block;
-  background-color: #EFECEA; /* #222; */
+  background-color: #5d7e95; /*styleswitcher*//* #222; */
   color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #fff; /*styleswitcher*//* #000; */
   font-size: 12px;
   letter-spacing: .125em;
   text-transform: uppercase;
@@ -500,7 +502,7 @@ footer a, footer address{
 /*-------------------FAQ.html--------------------------------*/
 
 .faq-msg{
-background-color: #000000;  // original was #f6f6f6
+background-color: #000;  /*styleswitcher*/ /*#f6f6f6*/
 padding: 10px;
 text-align: center;
 width: 90%;
@@ -557,7 +559,7 @@ background-color: #f6f6f6;
 
 header{
   margin-bottom: 20px;
-  background-color: #000;  /*styleswitcher*/
+  background-color: #F7F7F7;  /*styleswitcher*/
 }
 
 .search-scart{width: 80%;}
@@ -586,7 +588,7 @@ nav span{display: none;}
 }
 
 #MainNav li{
-  background-color: white;
+  background-color: #5D7E95;  /*styleswitcher*/ /*white*/
   border:none;
   padding: 10px 10px 0;
   height: inherit;
@@ -601,20 +603,22 @@ nav span{display: none;}
   font-weight: 700;
 }
 
-#MainNav li:last-child a{color:#5d7e95;}
+#MainNav li:last-child a{
+  color: #fff;  /*styleswitcher*/ /*#5d7e95*/
+}
 
 #SubNav li:last-child, #Gender li:last-child{display: none;}
 
 #SubNav li{
   border: none;
-  background-color: #5d7e95;
+  background-color: #fff; /*styleswitcher*/ /*#5d7e95*/
 }
 
 #SubNav li:first-child{border-bottom-left-radius: 10px;}
 #SubNav li:nth-last-child(2){border-bottom-right-radius: 10px;}
 
 #SubNav li a{
-  color: #FFF;
+  color:#5d7e95; /*styleswitcher*/ /*#fff*/
 }
 
 #Gender{margin-top: 10px;}
@@ -631,6 +635,7 @@ nav span{display: none;}
   display: block;
   margin: 20px auto;
   position: relative;
+  background-color: #000;  /*styleswitcher*/
 }
 
 .boton-tr:hover{

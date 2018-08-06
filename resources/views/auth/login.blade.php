@@ -50,5 +50,9 @@
             </div>
         </form>
     </div>
+
+    <!-- Scripts -->
+    <script src="js/checkEmail.js"></script>
+    {{-- <script src="/js/register.js"></script> --}}
 </main>
 @endsection
