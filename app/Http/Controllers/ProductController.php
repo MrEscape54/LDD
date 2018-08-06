@@ -71,7 +71,7 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $brand = DB::table('brands')->where('id', '=', $request['brand_id'])->value('brand_name');
-        
+
         $request->validate([
             'brand_id' => 'required|numeric',
             'category_id' => 'required|numeric',
@@ -95,7 +95,7 @@ class ProductController extends Controller
             'price' => $request['price'],
             'isAvailable' => $request['isAvailable'],
             'picture' =>$name,
-        ]); 
+        ]);
 
         $request->session()->flash('message', 'Producto creado satisfactoriamente!');
         return redirect()->route('products.index');
@@ -135,9 +135,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $brand = DB::table('brands')->where('id', '=', $request['brand_id'])->value('brand_name');
-        
+
         $request->validate([
             'brand_id' => 'required|numeric',
             'category_id' => 'required|numeric',
@@ -173,10 +173,19 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {    
+    {
         $product = Product::find($id);
         $product->delete();
         session()->flash('message', 'Producto eliminado satisfactoriamente!');
         return redirect()->route('products.index');
+    }
+
+    public function search(Request $request) {  // searchbox
+      $query = $request->input('query');
+      $products = Product::where('description', 'LIKE', "%query%")->get();
+
+      return view('products.prodindex', [
+        'products' => $products,
+      ]);
     }
 }

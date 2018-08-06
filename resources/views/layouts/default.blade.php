@@ -24,10 +24,24 @@
 
     <header>
         <div class="search-scart">
-          <button id="styleicon" type="button">Color</button><!-- styleswitcher -->
-            <i class="fas fa-search fa-lg"></i>
+          <button id="styleicon" type="button">Color</button>  <!-- styleswitcher -->
+
+          <ul class="nav navbar-nav">  <!-- searchbox -->
+            <li class="nav-item">
+              <form action="/products">
+                <div class="input-group">
+                  <input type="text" name="query" class="form-control" placeholder="Buscar..." requiered>
+                  <span class="input-group-btn">
+                    <button class="btn btn-outline-success">Buscar</button>
+                  </span>
+                </div>
+              </form>
+            </li>
+          </ul>
+
+            <!-- <i class="fas fa-search fa-lg"></i> -->
             <div class="scart">
-                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                <!-- <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a> -->
                 <span class="badge">13</span>
             </div>
             <div class="ingreso">
