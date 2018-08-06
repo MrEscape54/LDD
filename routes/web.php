@@ -13,6 +13,8 @@ Route::get('products/watches/brands/{brand}', 'ProductController@showByBrand')->
 Route::get('products/watches/categories/{category}', 'ProductController@showByCategory')->name('products.category');
 Route::get('products/watches/genres/{genre}', 'ProductController@showByGenre')->name('products.genre');
 
+Route::get('search', 'ProductController@search')->name('search');
+
 Route::get('users/user/{user}', 'UserController@editProfile')->middleware('auth')->name('users.user');
 Route::match(['put', 'patch'],('users/user{user}'), 'UserController@updateProfile')->middleware('auth')->name('users.updateProfile');
 

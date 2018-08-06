@@ -40,13 +40,14 @@ class ProductController extends Controller
         return view('products.watches')->with('products', $products);
     }
 
-    public function search($key) {
+    public function search(Request $request) {
+        $searchInput = $request->searchInput;
 
-        $products = DB::table('products')
-                ->where('description', 'like', '%'.$key.'%')
-                ->get();
+        $product = DB::table('products')
+                ->where('description', 'like', '%' . $searchInput . '%')
+                ->paginate(24);
 
-        return view('products.watches')->with('products', $products);
+        return view('products.watches')->with('products', $product);
     }
 
     /**

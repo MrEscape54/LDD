@@ -24,8 +24,10 @@
     <header>
         <div class="search-scart">
            <div class="search">
-                <i class="fas fa-search fa-lg cart"></i>
-                <input class="search-input" type="text" value="" placeholder="Buscar">
+           <form action="{{url('search')}}" method="get">
+                    <i class="fas fa-search fa-lg cart"></i>
+                    <input class="search-input" type="text" value="" name="searchInput" placeholder="Buscar">
+                </form>
            </div>
             <div class="cart-plus-login">
                 <div class="scart">
@@ -103,7 +105,6 @@
                 <li><a href="{{route('products.category', 5)}}">Smart</a></li>
                 <li><a href="{{route('products.category', 6)}}">Vintage</a></li>
                 <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
-
             </ul>
         </nav>
 
