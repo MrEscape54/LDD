@@ -27,8 +27,11 @@
           <button id="styleicon" type="button">Color</button>  <!-- styleswitcher -->
 
           <div class="search">
-            <i class="fas fa-search fa-lg cart"></i>
+            <form action="/products">
             <input class="search-input" type="text" value="" placeholder="Buscar" name="query">
+            <button class="btn btn-outline-success"><i class="fas fa-search fa-lg cart"></i></button>
+          </form>
+
           </div>
           <div class="cart-plus-login">
             <div class="scart">
