@@ -47,7 +47,7 @@
                                         <ul>
                                             <li class="desplegable"><a href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
-                                                                document.getElementById('logout-form').submit();">
+                                                            document.getElementById('logout-form').submit();">
                                                     {{ __('Salir') }}
                                                 </a></li>
                                             <li class="desplegable"><a href="{{ route('users.user', Auth::user()->id) }}">Perfil</a></li>
@@ -168,10 +168,5 @@
         </div>
     </footer>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-    <script src="/js/checkEmail.js"></script>
-    
-    {{-- <script src="/js/register.js"></script> --}}
-
-
 </body>
 </html>

@@ -122,7 +122,7 @@ svg{
 }
 
 .search-input:focus{
-  width: 150px;
+  width: 170px;
   border: 1px solid #e5e5e5;
   transition: all 250ms ease;
 }

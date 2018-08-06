@@ -13,7 +13,7 @@ class ProductController extends Controller
     // Only admins are allowed to perform the functions below
     public function __construct()
     {
-        $this->middleware('admin')->except(['showProducts', 'showByBrand', 'showByCategory', 'showByGenre']);
+        $this->middleware('admin')->except(['showProducts', 'showByBrand', 'showByCategory', 'showByGenre', 'search']);
     }
 
     public function showProducts() {
@@ -36,6 +36,15 @@ class ProductController extends Controller
 
     public function showByGenre($id) {
         $products = Product::where('genre_id', '=', $id)->paginate(20);
+
+        return view('products.watches')->with('products', $products);
+    }
+
+    public function search($key) {
+
+        $products = DB::table('products')
+                ->where('description', 'like', '%'.$key.'%')
+                ->get();
 
         return view('products.watches')->with('products', $products);
     }
