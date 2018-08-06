@@ -23,46 +23,51 @@
 
     <header>
         <div class="search-scart">
-            <i class="fas fa-search fa-lg"></i>
-            <div class="scart">
-                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                <span class="badge">13</span>
-            </div>
-            <div class="ingreso">
-                <ul>
-                    @guest
-                        <li>
-                            <a href="{{ route('login') }}">{{ __('Ingresar') }}</a>
-                        </li>
-                    @else
-                        <li class="avatar-container">
-                            <a><img src="/storage/{{Auth::user()->avatar }}"></a>
-                            <span>
-                                <div class="submenu-container">
-                                    <div class="submenu-items">
-                                    <ul>
-                                        <li class="desplegable"><a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                {{ __('Salir') }}
-                                            </a></li>
-                                        <li class="desplegable"><a href="{{ route('users.user', Auth::user()->id) }}">Perfil</a></li>
-                                        @if (Auth::user()->isAdmin === 1) 
-                                            <li class="desplegable"><a href="{{ route('products.index') }}">Productos</a></li>
-                                            <li class="desplegable"><a href="{{ route('categories.index') }}">Categorias</a></li>
-                                            <li class="desplegable"><a href="{{ route('brands.index') }}">Marcas</a></li>
-                                            <li class="desplegable"><a href="{{ route('users.index') }}">Usuarios</a></li>
-                                        @endif
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+           <div class="search">
+                <i class="fas fa-search fa-lg cart"></i>
+                <input class="search-input" type="text" value="" placeholder="Buscar">
+           </div>
+            <div class="cart-plus-login">
+                <div class="scart">
+                    <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                    <span class="badge">13</span>
+                </div>
+                <div class="ingreso">
+                    <ul>
+                        @guest
+                            <li>
+                                <a href="{{ route('login') }}">{{ __('Ingresar') }}</a>
+                            </li>
+                        @else
+                            <li class="avatar-container">
+                                <a><img src="/storage/{{Auth::user()->avatar }}"></a>
+                                <span>
+                                    <div class="submenu-container">
+                                        <div class="submenu-items">
+                                        <ul>
+                                            <li class="desplegable"><a href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                    {{ __('Salir') }}
+                                                </a></li>
+                                            <li class="desplegable"><a href="{{ route('users.user', Auth::user()->id) }}">Perfil</a></li>
+                                            @if (Auth::user()->isAdmin === 1) 
+                                                <li class="desplegable"><a href="{{ route('products.index') }}">Productos</a></li>
+                                                <li class="desplegable"><a href="{{ route('categories.index') }}">Categorias</a></li>
+                                                <li class="desplegable"><a href="{{ route('brands.index') }}">Marcas</a></li>
+                                                <li class="desplegable"><a href="{{ route('users.index') }}">Usuarios</a></li>
+                                            @endif
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                 @csrf
-                                        </form>
-                                    </ul>
+                                            </form>
+                                        </ul>
+                                        </div>
                                     </div>
-                                </div>
-                            </span>
-                        </li>
-                    @endguest
-                </ul>
+                                </span>
+                            </li>
+                        @endguest
+                    </ul>
+                </div>
             </div>
         </div>
         <hr style="border:0.2px solid #ccc; width: 80%;">

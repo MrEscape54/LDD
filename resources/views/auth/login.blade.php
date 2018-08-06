@@ -51,4 +51,6 @@
         </form>
     </div>
 </main>
+
+<script src="js/checkEmail.js"></script>
 @endsection

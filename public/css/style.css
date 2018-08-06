@@ -107,13 +107,41 @@ svg{
 
 .fa-search{margin-right: auto;}
 
-.scart {margin-right: 30px;}
+.scart {margin-right: 8px; display: inline;}
+
+.cart{
+  max-width: 0.8em;
+  position: absolute;
+  top: 2px;
+  right: 6px;
+}
+
+.search{
+  display: flex;
+  position: relative;
+}
+
+.search-input:focus{
+  width: 150px;
+  border: 1px solid #e5e5e5;
+  transition: all 250ms ease;
+}
+
+.search-input{
+  width: 90px;
+  padding: 4px 25px 4px 10px;
+  margin-left: 7px;
+  border-radius: 10px;
+  transition: all 250ms ease;
+}
+
+.ingreso {display: inline-block;}
 
 .search-scart {
   margin: 20px auto 5px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -560,8 +588,6 @@ header{margin-bottom: 20px;}
   margin: 0 auto;
 }
 
-.search-scart{width: 80%;}
-
 hr {
   display: none;
 }
@@ -848,9 +874,7 @@ border-radius: 5px;
   border-bottom: 1px solid #385667;
 }
 
-  .search-scart{width: 70%;}
-  
-  .brands img{width: 50%;}
+.brands img{width: 50%;}
 
 #SubNav li a:hover{
  color: #FFF;
@@ -859,9 +883,6 @@ border-radius: 5px;
 
 .search-scart{width: 70%;}
 
-.brands img{
-width: 50%;
-}
 .collections {
   width: 20%;
 }

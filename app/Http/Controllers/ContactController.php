@@ -17,7 +17,8 @@ class ContactController extends Controller
             'asunto' => 'required',
             'mensaje' => 'required',
         ]);
-
+        
+        //recibir mail enviado en la casilla ldd.dhouse@gmail.com
         return redirect()->route('/');
     }
 }
