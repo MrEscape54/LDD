@@ -404,14 +404,14 @@ width: 100%;
 }
 
 footer{
-background-color: gray;  /* black */
+  background-color: #5d7e95; /*styleswitcher*/ /* black */
 color: #999;
 font-size: 0.8em;
 }
 
 footer .container{
 padding: 0 5% 5px;
-color: gray;  /* white */
+color: white;
 }
 footer .container .primera-fila > div, footer .container .segunda-fila > div{
 padding-top: 40px;
@@ -420,7 +420,7 @@ padding-top: 40px;
 footer h6{
   margin: 0 0 10px;
   text-transform: uppercase;
-  color: black;  /* white */
+  color:white;
   font-size: 1em;
 }
 
@@ -443,10 +443,10 @@ footer h6{
 }
 
 .input-wrap button{
-  background-color: black;  /* white */
-  border-color: black;  /* white */
+  background-color: white;
+  border-color: white;
   height: 40px;
-  color: white;  /* black */
+  color: #5d7e95; /*styleswitcher*/ /* black */
   text-transform: uppercase;
   width: 30%;
   margin-top: .5em;
@@ -471,7 +471,7 @@ padding-top: 0
 
 footer a, footer address{
   text-decoration: none;
-  color: #999;
+  color: #fff; /*styleswitcher*/ /* #999 */
   margin-bottom: 5px;
 }
 
