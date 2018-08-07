@@ -27,9 +27,9 @@
           <button id="styleicon" type="button">Color</button>  <!-- styleswitcher -->
 
           <div class="search">
-            <form action="/products">
-            <input class="search-input" type="text" value="" placeholder="Buscar" name="query">
-            <button class="btn btn-outline-success"><i class="fas fa-search fa-lg cart"></i></button>
+            <form action="{{url('search')}}" method="get">
+            <input class="search-input" type="text" value="" placeholder="Buscar" name="searchInput">
+            <i class="fas fa-search fa-lg cart"></i>
           </form>
 
           </div>

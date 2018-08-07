@@ -13,7 +13,7 @@ class ProductController extends Controller
     // Only admins are allowed to perform the functions below
     public function __construct()
     {
-        $this->middleware('admin')->except(['showProducts', 'showByBrand', 'showByCategory', 'showByGenre']);
+        $this->middleware('admin')->except(['showProducts', 'showByBrand', 'showByCategory', 'showByGenre', 'search']);
     }
 
     public function showProducts() {
@@ -38,6 +38,16 @@ class ProductController extends Controller
         $products = Product::where('genre_id', '=', $id)->paginate(20);
 
         return view('products.watches')->with('products', $products);
+    }
+
+    public function search(Request $request) {
+        $searchInput = $request->searchInput;
+
+        $product = DB::table('products')
+                ->where('description', 'like', '%' . $searchInput . '%')
+                ->paginate(24);
+
+        return view('products.watches')->with('products', $product);
     }
 
     /**
@@ -178,14 +188,5 @@ class ProductController extends Controller
         $product->delete();
         session()->flash('message', 'Producto eliminado satisfactoriamente!');
         return redirect()->route('products.index');
-    }
-
-    public function search(Request $request) {  // searchbox
-      $query = $request->input('query');
-      $products = Product::where('description', 'LIKE', "%query%")->get();
-
-      return view('products.prodindex', [
-        'products' => $products,
-      ]);
     }
 }
