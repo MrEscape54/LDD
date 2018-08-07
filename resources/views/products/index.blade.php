@@ -39,7 +39,7 @@
             <td>{{$product->price}}</td>
             <td>{{$product->isAvailable}}</td>
             <td>{{$product->description}}</td>
-            <td>{{$product->picture}}</td>
+            <td><img src="{{$product->picture}}" alt="" style="height:30px;"></td>
             <td>
               <button type="button" class="btn btn-secondary">
                 <a href="{{action('ProductController@edit', $product['id'])}}">Editar</a>

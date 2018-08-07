@@ -132,6 +132,7 @@
                         </div>
                     </form>
                     <p style="margin-bottom: 0;">Recibe novedades y ofertas especiales</p>
+                    <p id="users"></p>
                 </div>
 
                 <div class="foot-contacto">
@@ -169,5 +170,6 @@
         </div>
     </footer>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+<script src="/js/totalUsers.js"></script>
 </body>
 </html>
