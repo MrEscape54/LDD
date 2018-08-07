@@ -45,7 +45,8 @@ class ProductController extends Controller
 
         $product = DB::table('products')
                 ->where('description', 'like', '%' . $searchInput . '%')
-                ->paginate(24);
+                ->paginate(24)
+                ->withPath('/search?searchInput='.$searchInput);
 
         return view('products.watches')->with('products', $product);
     }
