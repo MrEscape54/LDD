@@ -9,14 +9,26 @@
                 @csrf
                 @method('PATCH')
                 <div class="input-group input-group-icon">
-                    <input type="hidden" name="brand_id" value="{{ $product->brand_id }}" min="1"/>
+                    <select name="brand_id" class="input-group input-group-icon select-group">
+                        @foreach ($brands as $brand)
+                            <option value="{{$brand->id}}" {{ $product->brand_id == $brand->id ? 'selected' : '' }}>
+                                {{$brand->brand_name}}
+                            </option>
+                        @endforeach
+                    </select>
                     <div class="input-icon">
                         <i class="fas fa-clock"></i>
                     </div>
-
+                    <span class="obligatorio" >{{ $errors->first('brand_id') }}</span>
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="number" name="category_id" value="{{ $product->category_id }}" min="1"/>
+                        <select name="category_id" class="input-group input-group-icon select-group">
+                            @foreach ($categories as $category)
+                                <option value="{{$category->id}}" {{ $product->category_id == $category->id ? 'selected' : '' }}>
+                                    {{$category->category_name}}
+                                </option>
+                            @endforeach
+                        </select>
                     <div class="input-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
@@ -24,7 +36,13 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="number" name="genre_id" value="{{ $product->genre_id }}" min="1" max="2"/>
+                        <select name="genre_id" class="input-group input-group-icon select-group">
+                            @foreach ($genres as $genre)
+                                <option value="{{$genre->id}}" {{ $product->genre_id == $genre->id ? 'selected' : '' }}>
+                                    {{$genre->genre_name}}
+                                </option>
+                            @endforeach
+                        </select>
                     <div class="input-icon">
                         <span class="fas fa-venus-mars"></i>
                     </div>
@@ -56,7 +74,7 @@
               </div>
 
                 <div class="input-group input-group-icon">
-                <input type="file"  name="picture" value="{{ $product->picture }}"/>
+                <input type="file"  name="picture" value="{{ $product->picture }}"/> {{-- No trae la imagen --}}
                     <div class="input-icon">
                     <i class="fas fa-file-image"></i>
                     </div>

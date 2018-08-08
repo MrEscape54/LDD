@@ -140,8 +140,14 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
 
+        $brands = Brand::all();
+        $categories = Category::all();
+        $genres = Genre::all();
+
         session()->flash('message', 'Producto actualizado satisfactoriamente!');
-        return view('products.edit', compact('product'));
+        return view('products.edit', compact('product'))->with('brands', $brands)
+                                                        ->with('categories', $categories)
+                                                        ->with('genres', $genres);
     }
 
     /**
@@ -163,12 +169,19 @@ class ProductController extends Controller
             'description' => 'required',
             'price' => 'required',
             'isAvailable' => 'required|boolean',
-            'picture' => 'required|image'
+            'picture' => 'image'
         ]);
 
-        $file = $request->file('picture');
-        $name = '/img/Brands/' . $brand . '/' . $file->getClientOriginalName();
-        $file->move(public_path() . '/img/Brands/' . $brand, $file->getClientOriginalName());
+        if($request->hasfile('picture')){
+            $file = $request->file('picture');
+            $name = '/img/Brands/' . $brand . '/' . $file->getClientOriginalName();
+            $file->move(public_path() . '/img/Brands/' . $brand, $file->getClientOriginalName());
+        }
+        else {
+            $product = Product::find($id);
+            $productPicture = $product->picture;
+            $name = $productPicture;
+        }
 
         Product::find($id)->update([
             'brand_id' => $request['brand_id'],

@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="text"  name="description" value="{{ old('description') }}" placeholder="Description" />
+                    <input type="text"  name="description" value="{{ old('description') }}" placeholder="Descripción" />
                     <div class="input-icon">
                         <i class="fas fa-font"></i>
                     </div>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="number"  name="price" value="{{ old('price') }}" placeholder="Price" />
+                    <input type="number"  name="price" value="{{ old('price') }}" placeholder="Precio" />
                     <div class="input-icon">
                         <i class="fas fa-dollar-sign"></i>
                     </div>
