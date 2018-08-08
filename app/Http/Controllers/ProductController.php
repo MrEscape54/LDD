@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Genre;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Session\Session;
@@ -69,7 +71,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        $brands = Brand::all();
+        $categories = Category::all();
+        $genres = Genre::all();
+
+        return view('products.create')->with('brands', $brands)
+                                      ->with('categories', $categories)
+                                      ->with('genres', $genres);
     }
 
     /**

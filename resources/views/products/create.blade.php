@@ -5,10 +5,18 @@
             <div class="titulos">
                 <p>Agregar Producto</p>
             </div>
+
             <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="input-group input-group-icon">
-                    <input type="number" name="brand_id" value="{{ old('brand_id') }}" placeholder="Brand ID" />
+                    <select name="brand_id" class="input-group input-group-icon select-group">
+                            <option value="0" selected disabled>Marca</option>
+                            @foreach ($brands as $brand)
+                                <option value="{{$brand->id}}" {{ old('brand_id') == $brand->id ? 'selected' : '' }}>
+                                    {{$brand->brand_name}}
+                                </option>
+                            @endforeach
+                      </select>
                     <div class="input-icon">
                         <i class="fas fa-clock"></i>
                     </div>
@@ -16,7 +24,14 @@
 
                 </div>
                 <div class="input-group input-group-icon">
-                    <input type="number" name="category_id" value="{{ old('category_id') }}" placeholder="Category ID" />
+                        <select name="category_id" class="input-group input-group-icon select-group">
+                                <option value="0" selected disabled>Categoría</option>
+                                @foreach ($categories  as $category)
+                                    <option value="{{$category->id}}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                                        {{$category->category_name}}
+                                    </option>
+                                @endforeach
+                          </select>
                     <div class="input-icon">
                         <i class="fas fa-cogs"></i>
                     </div>
@@ -24,7 +39,14 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                    <input type="number" name="genre_id" value="{{ old('genre_id') }}" placeholder="Genre ID" />
+                        <select name="genre_id" class="input-group input-group-icon select-group">
+                                <option value="0" selected disabled>Género</option>
+                                @foreach ($genres as $genre)
+                                    <option value="{{$genre->id}}" {{ old('genre_id') == $genre->id ? 'selected' : '' }}>
+                                        {{$genre->genre_name}}
+                                    </option>
+                                @endforeach
+                          </select>
                     <div class="input-icon">
                         <span class="fas fa-venus-mars"></i>
                     </div>
@@ -48,7 +70,7 @@
                 </div>
 
                 <div class="input-group input-group-icon">
-                  <input type="number"  name="isAvailable"  value="{{ old('isAvailable') }}" placeholder="isAvailable" />
+                  <input type="number"  min="0" max="1" name="isAvailable"  value="{{ old('isAvailable') }}" placeholder="1 - Disponible, 0 - No Disponible" />
                   <div class="input-icon">
                       <i class="fas fa-check"></i>
                   </div>

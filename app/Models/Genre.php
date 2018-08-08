@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Genre extends Model
 {
-    protected $timestamps = false;
+    public $timestamps = false;
 
     public function products()
     {
