@@ -16,8 +16,6 @@
     <link rel="stylesheet" href="/css/sanitize.css">
     <link id="style_css"  rel="stylesheet" href="/css/style.css">
     <link id="contact_css"  rel="stylesheet" href="/css/contact.css">
-    <!-- <link rel="stylesheet" href="/css/style2.css">
-    <link rel="stylesheet" href="/css/contact2.css"> -->
 
 </head>
 <body>
@@ -39,27 +37,6 @@
               <span class="badge">13</span>
             </div>
             <div class="ingreso">
-
-
-          <!-- <ul class="nav navbar-nav">  <! searchbox
-            <li class="nav-item">
-              <form action="/products">
-                <div class="input-group">
-                  <input type="text" name="query" class="form-control" placeholder="Buscar..." requiered>
-                  <span class="input-group-btn">
-                    <button class="btn btn-outline-success">Buscar</button>
-                  </span>
-                </div>
-              </form>
-            </li>
-          </ul>
-
-             <i class="fas fa-search fa-lg"></i>
-            <div class="scart">
-                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
-                <span class="badge">13</span>
-            </div>
-            <div class="ingreso"> -->
                 <ul>
                     @guest
                         <li>
