@@ -38,7 +38,7 @@
             <td>{{$user->first_name}}</td>
             <td>{{$user->last_name}}</td>
             <td>{{$user->phone}}</td>
-            <td>{{$user->avatar}}</td>
+            <td><img src="{{'storage/'.$user->avatar}}" alt="" width="30px"></td>
             <td>{{$user->isAdmin}}</td>
             <td>
               <button type="button" class="btn btn-secondary">
