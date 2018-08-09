@@ -164,7 +164,9 @@ class UserController extends Controller
             $path = $request->file('avatar')->store('avatars');
         }
         else {
-            $path = 'avatars/avatar-generico.jpg';
+            $user = User::find($id);
+            $avatar =$user->avatar;
+            $path = $avatar;
         }
 
         User::find($id)->update([
