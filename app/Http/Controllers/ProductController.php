@@ -20,36 +20,56 @@ class ProductController extends Controller
 
     public function showProducts() {
         $products = Product::paginate(20);
+        $brands = Brand::all();
+        $categories = Category::all();
 
-        return view('products.watches')->with('products', $products);
+        return view('products.watches')->with('products', $products)
+                                       ->with('brands', $brands)
+                                       ->with('categories', $categories);
     }
 
     public function showByBrand($id) {
         $products = Product::where('brand_id', '=', $id)->paginate(20);
+        $brands = Brand::all();
+        $categories = Category::all();
 
-        return view('products.watches')->with('products', $products);
+        return view('products.watches')->with('products', $products)
+                                       ->with('brands', $brands)
+                                       ->with('categories', $categories);
     }
 
     public function showByCategory($id) {
         $products = Product::where('category_id', '=', $id)->paginate(20);
+        $brands = Brand::all();
+        $categories = Category::all();
 
-        return view('products.watches')->with('products', $products);
+        return view('products.watches')->with('products', $products)
+                                       ->with('brands', $brands)
+                                       ->with('categories', $categories);
     }
 
     public function showByGenre($id) {
         $products = Product::where('genre_id', '=', $id)->paginate(20);
+        $brands = Brand::all();
+        $categories = Category::all();
 
-        return view('products.watches')->with('products', $products);
+        return view('products.watches')->with('products', $products)
+                                       ->with('brands', $brands)
+                                       ->with('categories', $categories);
     }
 
     public function search(Request $request) {
         $searchInput = $request->searchInput;
+        $brands = Brand::all();
+        $categories = Category::all();
 
         $product = Product::where('description', 'like', '%' . $searchInput . '%')
                 ->paginate(24)
                 ->withPath('search?searchInput='. $searchInput);
 
-        return view('products.watches')->with('products', $product);
+        return view('products.watches')->with('products', $product)
+                                       ->with('brands', $brands)
+                                       ->with('categories', $categories);
     }
 
     /**

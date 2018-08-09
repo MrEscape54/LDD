@@ -81,14 +81,14 @@
         <nav id="MainNavOuter">
             <span>Marca</span>
             <ul id="MainNav" class="">
-                {{-- @foreach ($brands as $brand)
+                @foreach ($brands as $brand)
                     @if ($brand->id == $brands->count())
                         <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
                     @else
                         <li><a href="{{route('products.brand', $brand->id)}}">{{$brand->brand_name}}</a></li>
                     @endif
-                @endforeach --}}
-                <li class="active"><a href="{{route('products.brand', 1)}}">Breguet</a></li>
+                @endforeach
+                {{-- <li class="active"><a href="{{route('products.brand', 1)}}">Breguet</a></li>
                 <li><a href="{{route('products.brand', 2)}}">Breitling</a></li>
                 <li><a href="{{route('products.brand', 3)}}">Cartier</a></li>
                 <li><a href="{{route('products.brand', 4)}}">Longines</a></li>
@@ -98,27 +98,27 @@
                 <li><a href="{{route('products.brand', 8)}}">Rolex</a></li>
                 <li><a href="{{route('products.brand', 9)}}">TAG Heuer</a></li>
                 <li><a href="{{route('products.brand', 10)}}">Zenith</a></li>
-                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
+                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li> --}}
             </ul>
         </nav>
 
         <nav id="SubNavOuter">
             <span>Tipo</span>
             <ul id="SubNav" class="">
-                    {{-- @foreach ($categories as $category)
+                @foreach ($categories as $category)
                     @if ($category->id == $categories->count())
                         <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
                     @else
                         <li><a href="{{route('products.category', $category->id)}}">{{$category->category_name}}</a></li>
                     @endif
-                @endforeach --}}
-                <li class="active"><a href="{{route('products.category', 1)}}">Deportivo</a></li>
+                @endforeach
+                {{-- <li class="active"><a href="{{route('products.category', 1)}}">Deportivo</a></li>
                 <li><a href="{{route('products.category', 2)}}">Automático</a></li>
                 <li><a href="{{route('products.category', 3)}}">Cronógrafo</a></li>
                 <li><a href="{{route('products.category', 4)}}">Buceo</a></li>
                 <li><a href="{{route('products.category', 5)}}">Smart</a></li>
                 <li><a href="{{route('products.category', 6)}}">Vintage</a></li>
-                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li>
+                <li class="last"><a href="{{route('products.watches')}}">Todos</a></li> --}}
             </ul>
         </nav>
 

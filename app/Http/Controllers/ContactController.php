@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Brand;
+use App\Models\Category;
 
 class ContactController extends Controller
 {
     public function contact() {
-        return view('/contact');
+        $brands = Brand::all();
+        $categories = Category::all();
+
+        return view('/contact')->with('brands', $brands)
+                               ->with('categories', $categories);
     }
 
     public function sendContact(Request $request) {
